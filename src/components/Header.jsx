@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className = 'menu'>
       <ul className = 'menu-container'>
-        <li className= 'menu-item'>
+        <li className= 'menu-item logo-box'>
           <b> Café </b> Vert
         </li>
         <li className= 'menu-item'>

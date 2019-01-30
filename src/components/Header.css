@@ -9,7 +9,7 @@
 }
 
 .menu-container{
-  display: flex;
+  display: block;
 }
 
 .menu-item{
@@ -23,8 +23,42 @@
   background: #342f2b;
   background: linear-gradient(135deg, #342f2b 0%, #3d3832 100%);
 }
+.menu-item b{
+  display: block;
+  color: #fff;
+}
+.logo-box{
+  position: relative;
+  font-size: 30px;
+  padding-left: 50px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: default;
+}
+.logo-box b{
+  display: inline-block;
+}
+.logo-box::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 25px;
+  width: 23px;
+  height: 33px;
+  background: url("logo.png") no-repeat center;
+      background-size: auto;
+  background-size: cover;
+}
 .menu-order-btn{
-
+  position: relative;
+  height: 80px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #000;
+  -webkit-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #8bbc44;
 }
 
 .menu-order-btn::before{
