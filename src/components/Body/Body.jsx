@@ -2,15 +2,24 @@ import React from "react";
 import "./Body.css";
 import girlsImg from "./images/girls.png";
 import prodBox from "./images/prod_three.png";
+import coffeBeans from "./images/coffe_beans1.png";
+
 
 const Body = () => {
   const orderClickHandler = ()=>{
   }
   return (
     <section className="body-container">
+
       <div className="girls">
         <img src={girlsImg} alt="girls pic" />
       </div>
+      <div className='caffe-beans1'>
+        <img src={coffeBeans} alt="caffe beans"/>
+      </div >
+      <div className='caffe-beans2'>
+        <img src={coffeBeans} alt="caffe beans"/>
+      </div >
       <div className="body-poster">
         <h3>حرق الدهون</h3>
         <h2>شراب</h2>
@@ -49,6 +58,7 @@ const Body = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };
