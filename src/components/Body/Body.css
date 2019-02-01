@@ -1,0 +1,138 @@
+.body-container{
+  display: flex;
+  padding: 80px 5% 0 5%;
+  background: url('./images/bg_01.jpg') no-repeat center top;
+  background-size: cover;
+}
+.girls{
+  
+}
+.body-poster{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-basis: 50%;
+}
+.body-poster>h3{
+  font-size: 76px;
+  line-height: 1;
+  font-weight: 300;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #5d422d;
+  margin-top: 20px;
+}
+.body-poster>h2{
+  font-size: 82px;
+  line-height: 1;
+  font-weight: 800;
+  color: #89b92f;
+}
+.body-poster>h1{
+  font-size: 136px;
+  line-height: 0.8;
+  font-weight: 900;
+  font-style: italic;
+  color: #5d422d;
+}
+.fast_eff{
+  display: inline-block;
+  margin-top: 15px;
+  border-radius: 10px;
+  padding: 5px 20px;
+  background: #7bb81f;
+  transform: skew(-20deg);
+}
+.fast_eff>h4{
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 5px;
+  color: #795940;
+}
+.fast_item{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fast_item>li{
+  position: relative;
+  flex-basis: 50%;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: right;
+  color: #5b402b;
+  padding: 5px 55px 5px 0;
+  margin: 0 0 20px;
+  direction: rtl;
+}
+.fast_item>li::before{
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #7cbb24 url("./images/check_03.png") no-repeat center;
+}
+.fast_item>li>p{
+  font-size: 11px;
+  color: #837a75;
+  margin-top: 4px;
+}
+.prod-info-box{
+  display: flex;
+  flex-wrap: wrap;
+}
+.prod-info-img{
+  position: relative;
+  flex-basis: 60%;
+}
+.prod-info-img>img{
+  width: 100%;
+}
+.prod-info-price{
+  flex-basis: 40%;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+.prod-info-price>h5 {
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+  color: #3f342b;
+  margin-bottom: 10px;
+}
+.price_box{
+  font-size: 30px;
+  color: #3f342b;
+}
+.price_box>span{
+  font-size: 50px;
+}
+.order-button{
+  position: absolute;
+  padding: 0;
+  cursor: pointer;
+  bottom: 0px;
+  left: 60px;
+  text-align: center;
+  color: #fff !important;
+  font-size: 33px;
+  font-family: 'Harmattan', sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+  transition: 0.3s;
+  text-decoration: none;
+  background: linear-gradient(180deg, #ff6600 0%, #c44409 80%);
+  border: none;
+  border-bottom: 5px solid #722501;
+  border-radius: 5px;
+  padding: 3px 30px;
+}
+.order-button:hover{
+  padding: 5px 35px;
+  box-shadow: 0 0 0px 6px rgba(255, 255, 255, 0.6);
+}
