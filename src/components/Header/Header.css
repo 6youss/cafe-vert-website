@@ -39,6 +39,7 @@
   background: #342f2b;
   background: linear-gradient(135deg, #342f2b 0%, #3d3832 100%);
 }
+
 .menu-item b{
   display: block;
   color: #fff;
@@ -113,8 +114,8 @@
   background: #7bb820;
 }
 
-@media screen and (max-width: 639px){
-  
+@media screen and (max-width: 850px){
+
   .logo-box{
     border-bottom-left-radius: 0;
   }

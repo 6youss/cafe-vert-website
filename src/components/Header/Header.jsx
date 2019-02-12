@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./Header.css";
+import { LocaleContext } from "../../LocaleContext";
 
 class Header extends Component {
   state = {
     isMobileSize: false,
     showMenu: true
   };
+
   componentDidMount() {
     window.addEventListener("resize", this.resize.bind(this));
     this.resize();
   }
   resize() {
-    let innerWidth = window.innerWidth <= 760;
+    let innerWidth = window.innerWidth <= 850;
     if (innerWidth !== this.state.isMobileSize) {
       this.setState({
         isMobileSize: innerWidth,
@@ -29,32 +31,36 @@ class Header extends Component {
 
   MenuItems = () => {
     return (
-      <ul className={"menu-container"}>
-        <li className="menu-item logo-box">
-          <b> Café </b> Vert
-        </li>
-        <li className="menu-item">
-          Café Vert
-          <b> حمية </b>
-        </li>
-        <li className="menu-item">
-          Café Vert
-          <b> تعليقات العملاء </b>
-        </li>
-        <li className="menu-item">
-          Café Vert
-          <b> إرشادات </b>
-        </li>
-        <li className="menu-item">
-          Café Vert
-          <b> المكونات </b>
-        </li>
-        <li className="menu-item">
-          Café Vert
-          <b> الصفحة الرئيسية </b>
-        </li>
-        <li className="menu-item menu-order-btn">اطلب</li>
-      </ul>
+      <LocaleContext.Consumer>
+        {locale => (
+          <ul className={"menu-container"}>
+            <li className="menu-item logo-box">
+              <b> Café </b> Vert
+            </li>
+            <li className="menu-item">
+              {locale.title}
+              <b> {locale.menuItem1} </b>
+            </li>
+            <li className="menu-item">
+              Café Vert
+              <b> تعليقات العملاء </b>
+            </li>
+            <li className="menu-item">
+              Café Vert
+              <b> إرشادات </b>
+            </li>
+            <li className="menu-item">
+              Café Vert
+              <b> المكونات </b>
+            </li>
+            <li className="menu-item">
+              Café Vert
+              <b> الصفحة الرئيسية </b>
+            </li>
+            <li className="menu-item menu-order-btn">اطلب</li>
+          </ul>
+        )}
+      </LocaleContext.Consumer>
     );
   };
   render() {
@@ -82,5 +88,4 @@ class Header extends Component {
     );
   }
 }
-
 export default Header;
