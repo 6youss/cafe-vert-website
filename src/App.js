@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header/Header'
-import Body from './components/Body/Body';
+import Section1 from './components/Section1/Section1';
+import Section2 from './components/Section2/Section2';
 import {LocaleContext} from './LocaleContext';
 import {locales} from './LocaleContext';
 class App extends Component {
@@ -18,8 +19,10 @@ class App extends Component {
     return (
       <LocaleContext.Provider value={this.state.locale}>
         <Header/>
-        <Body/>
-        <button onClick={this.changeLanguage}>change language</button>
+        <Section1/>
+        <Section2/>
+        {/* <button onClick={this.changeLanguage}>change language</button> */}
+
       </LocaleContext.Provider >
     );
   }

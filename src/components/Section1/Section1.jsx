@@ -1,14 +1,14 @@
 import React from "react";
-import "./Body.css";
+import "./Section1.css";
 import girlsImg from "./images/girls.png";
 import prodBox from "./images/prod_three.png";
 import coffeBeans from "./images/coffe_beans1.png";
 
-const Body = () => {
+const Section1 = () => {
   const orderClickHandler = () => {};
   return (
     <section className="section1">
-      <div className="body-container">
+      <div className="body-container">  
         <div className="caffe-beans1">
           <img src={coffeBeans} alt="caffe beans" />
         </div>
@@ -63,4 +63,4 @@ const Body = () => {
   );
 };
 
-export default Body;
+export default Section1;
