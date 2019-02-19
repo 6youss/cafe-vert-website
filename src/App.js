@@ -11,17 +11,19 @@ function App () {
   const [locale,setLocale] = useState(locales.ar);
 
   const changeLanguage = ()=>{
-    setLocale(locales.fr);
+    if(locale === locales.fr){
+      setLocale(locales.ar);
+    }else{
+      setLocale(locales.fr);
+    }
   }
   
   return (
     <LocaleContext.Provider value={locale}>
-      <Header/>
+      <Header changeLanguage = {changeLanguage} />
       <Section1/>
       <Section2/>
       <Section3/>
-      <button onClick={changeLanguage}>change language</button>
-
     </LocaleContext.Provider >
   );
 

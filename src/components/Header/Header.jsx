@@ -2,9 +2,10 @@ import React, { useContext, useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./Header.css";
 import { LocaleContext } from "../../LocaleContext";
+import Languages from '../Languages/Languages'
 
-function Header() {
-  
+function Header(props) {
+  const {changeLanguage} = props;
   const [isMobileSize, setIsMobileSize] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const locale = useContext(LocaleContext);
@@ -30,7 +31,7 @@ function Header() {
     setShowMenu(!showMenu);
   }
 
-  const MenuItems = () => {
+  function MenuItems () {
     return (
       <ul className={"menu-container"}>
         <li className="menu-item logo-box">
@@ -60,8 +61,11 @@ function Header() {
       </ul>
     );
   };
+
+  
   return (
     <header className="menu">
+      <Languages changeLanguage = {changeLanguage}/>
       {isMobileSize && (
         <div className="nav-toggle" onClick={handleShowMenu}>
           <div>

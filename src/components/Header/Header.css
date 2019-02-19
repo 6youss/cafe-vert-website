@@ -114,6 +114,8 @@
   background: #7bb820;
 }
 
+
+
 @media screen and (max-width: 850px){
 
   .logo-box{
@@ -124,3 +126,4 @@
     width: 65%;
   }
 }
+
