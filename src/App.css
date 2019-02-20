@@ -26,6 +26,10 @@ img{
   vertical-align: middle;
 }
 
+b, strong {
+  font-weight: 700;
+}
+
 .neucha {
   font-family: 'Neucha', cursive;
   line-height: 1;

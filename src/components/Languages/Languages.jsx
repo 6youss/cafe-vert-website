@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import { CSSTransition } from "react-transition-group";
+import React, { useState } from "react";
 import "./Languages.css";
 import algerie from "./algerie.png";
 import france from "./france.png";

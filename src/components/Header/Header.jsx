@@ -5,7 +5,7 @@ import { LocaleContext } from "../../LocaleContext";
 import Languages from '../Languages/Languages'
 
 function Header(props) {
-  const {changeLanguage} = props;
+  
   const [isMobileSize, setIsMobileSize] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const locale = useContext(LocaleContext);
@@ -65,7 +65,7 @@ function Header(props) {
   
   return (
     <header className="menu">
-      <Languages changeLanguage = {changeLanguage}/>
+      <Languages changeLanguage = {props.changeLanguage}/>
       {isMobileSize && (
         <div className="nav-toggle" onClick={handleShowMenu}>
           <div>
