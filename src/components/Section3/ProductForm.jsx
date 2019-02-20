@@ -37,7 +37,7 @@ const ProductForm = ({count}) => {
           <div>
             <b> Café </b> Vert
           </div>
-          <h5>الدفع عند الاستلام </h5>
+          <h5 className="green-rounded">الدفع عند الاستلام </h5>
         </div>
         <div className="pf-title">
           <h3>{titleText}</h3>
