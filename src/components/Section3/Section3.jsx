@@ -7,9 +7,9 @@ const Section3 = () => {
   
   return (
     <section className="section3">
-      <ProductForm/>
-      <ProductForm/>
-      <ProductForm/>
+      <ProductForm count={1}/>
+      <ProductForm count={2}/>
+      <ProductForm count={3}/>
     </section>
   );
 };
