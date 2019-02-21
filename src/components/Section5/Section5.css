@@ -1,0 +1,53 @@
+.section5 {
+  display: flex;
+  padding: 30px 5%;
+}
+
+.section5-left {
+  flex-basis: 50%;
+  direction: rtl;
+}
+.section5-left h2 {
+  font-size: 38px;
+  font-weight: bold;
+  color: #1f1f1f;
+  margin: 0 0 15px;
+  text-align: right;
+}
+.section5-left h3 {
+  margin: 15px 0;
+}
+.section5-left p {
+  font-size: 18px;
+  color: #505050;
+  margin: 0 0 15px;
+}
+.green-bean-form {
+  position: relative;
+  flex-basis: 90%;
+  margin-left: 10%;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  padding: 35px 15px 35px 270px;
+  background: url(./images/banner_01.png) no-repeat center;
+  background-size: auto;
+  background-size: cover;
+  color: #6ac619;
+  font-size: 18px;
+}
+.green-bean-form span {
+  display: block;
+}
+.green-bean-form h4 {
+  font-size: 32px;
+  display: block;
+}
+.green-bean-form > img {
+  position: absolute;
+  z-index: 1;
+  left: -10px;
+  top: 20px;
+}
+.section5-right {
+  flex-basis: 50%;
+}
