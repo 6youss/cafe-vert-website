@@ -1,0 +1,14 @@
+.order{
+  display: flex;
+}
+
+.order-left{
+  flex-basis: 50%;
+}
+
+.order-right{
+  display: flex;
+  flex-direction: column;
+  align-content: start;
+  flex-basis: 30%;
+}
