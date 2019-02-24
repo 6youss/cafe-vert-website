@@ -1,14 +1,24 @@
 .order{
   display: flex;
+  flex-wrap: wrap;
 }
 
 .order-left{
   flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+
+.order-left>img{
+  width: 40%;
+  min-width: 140px;
 }
 
 .order-right{
   display: flex;
   flex-direction: column;
-  align-content: start;
+  align-content: flex-start;
   flex-basis: 30%;
 }
