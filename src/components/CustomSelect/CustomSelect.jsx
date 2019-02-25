@@ -12,6 +12,7 @@ export default function CustomSelect({ options,...rest }) {
   return (
     <Select
       {...rest}
+      isRtl = {true}
       isSearchable={false}
       options={options}
       styles={customStyles}

@@ -1,13 +1,14 @@
 .section5 {
-  display: flex;
   padding: 30px 5%;
+}
+.section5-1 {
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.section5>div {
+.section5-1 > div {
   flex-grow: 1;
 }
-
 .section5-left {
   flex-basis: 55%;
   margin-right: 5%;
@@ -60,7 +61,7 @@
   flex-direction: column;
   direction: rtl;
 }
-.section5-right>div {
+.section5-right > div {
   flex-grow: 1;
 }
 .section5-right-woman {
@@ -83,7 +84,7 @@
   bottom: 0px;
 }
 .section5-right-woman > div {
-  flex-basis: 45%;  
+  flex-basis: 45%;
   padding: 15px 15px 15px 30px;
   position: relative;
   z-index: 5;
@@ -191,15 +192,93 @@
   bottom: 0px;
   width: 100%;
   max-width: 190px;
-  
 }
 
 
-@media screen and (max-width: 639px){
-  .section5-left{
+/************************     2     ***********************************/
+
+.section5-2 {
+  border-radius: 5px;
+  background: url(./images/bg_banner_02.jpg) no-repeat center;
+  background-size: auto;
+  background-size: cover;
+}
+.section5-2-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #4b4f49;
+}
+.section5-2-header > h3 {
+  flex-grow: 1;
+  flex-basis: 25%;
+  font-size: 24px;
+  font-weight: 800;
+  color: #b2b3ae;
+}
+.section5-2-header > h2 {
+  flex-grow: 1;
+  flex-basis: 25%;
+  font-size: 24px;
+  font-weight: 800;
+  color: #b2b3ae;
+  text-align: end;
+}
+.section5-2-body {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+.section5-2-body-left {
+  flex-basis: 40%;
+}
+.section5-2-body-left > h3 {
+  font-size: 53px;
+  font-weight: 300;
+  color: #b5b8b1;
+}
+.section5-2-body-left > h3 > b {
+  font-weight: 800;
+}
+.section5-2-body-left > p {
+  font-size: 16px;
+  color: #b5b8b1;
+  margin: 10px 0;
+  direction: rtl;
+}
+.section5-2-body-right {
+  text-align: end;
+  flex-basis: 50%;
+  position: relative;
+}
+.section5-2-body-right>h3 {
+  font-size: 48px;
+font-weight: 800;
+color: #8edd20;
+}
+.section5-2-body-right>h4 {
+  font-size: 26px;
+  font-weight: 300;
+  color: #8edd20;
+}
+.section5-2-body-right>img {
+  left: -30px;
+  position: absolute;
+  bottom: 0px;
+}
+
+
+
+/*************************** MEDIA QUERIES *****************************/
+
+
+
+@media screen and (max-width: 639px) {
+  .section5-left {
     margin: 0;
   }
-  
+
   .green-bean-form {
     text-align: center;
     padding: 35px 15px 35px 15px;
@@ -212,5 +291,4 @@
   .green-bean-form > img {
     visibility: hidden;
   }
-
 }
