@@ -98,7 +98,10 @@ const Section5 = () => {
         </div>
         <div className="section5-2-body">
           <div className="section5-2-body-left">
-            <h3> <b>Café</b> Vert </h3>
+            <h3>
+              {" "}
+              <b>Café</b> Vert{" "}
+            </h3>
             <p>
               تناول يوميًا قبل الإفطار وبعد ساعتين من العشاء في المساء... تنشّط
               الجسم عن طريق توفير الطاقة. تزيد معدل حرق الدهون 5 مرات. تقلل
@@ -109,11 +112,13 @@ const Section5 = () => {
             </p>
           </div>
           <div className="section5-2-body-right">
-            <h3>المتخصصون</h3>
-            <h4>يوصون به</h4>
-            <h3>لنتائجه الفعالة</h3>
-            <button className="order-button-form">اطلب الآن</button>
-            <img src={greenBean2} alt="green bean"/>
+            <img src={greenBean2} alt="green bean" />
+            <div>
+              <h3>المتخصصون</h3>
+              <h4>يوصون به</h4>
+              <h3>لنتائجه الفعالة</h3>
+              <button className="order-button-form">اطلب الآن</button>
+            </div>
           </div>
         </div>
       </div>

@@ -227,10 +227,12 @@
 }
 .section5-2-body {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 15px 20px;
 }
 .section5-2-body-left {
+  flex-grow: 1;
   flex-basis: 40%;
 }
 .section5-2-body-left > h3 {
@@ -248,24 +250,28 @@
   direction: rtl;
 }
 .section5-2-body-right {
+  flex-grow: 1;
   text-align: end;
   flex-basis: 50%;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
-.section5-2-body-right>h3 {
+.section5-2-body-right>div {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.section5-2-body-right>div>h3 {
   font-size: 48px;
 font-weight: 800;
 color: #8edd20;
 }
-.section5-2-body-right>h4 {
+.section5-2-body-right>div>h4 {
   font-size: 26px;
   font-weight: 300;
   color: #8edd20;
-}
-.section5-2-body-right>img {
-  left: -30px;
-  position: absolute;
-  bottom: 0px;
 }
 
 
