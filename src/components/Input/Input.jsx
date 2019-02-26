@@ -20,7 +20,7 @@ const Input = ({
           name={name}
           type={type}
           placeholder={placeholder}
-          onChange={handlechange}
+          onChange={handlechange} 
           defaultValue={init}
         />
       </div>

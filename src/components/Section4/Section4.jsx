@@ -22,7 +22,7 @@ const Section4 = () => {
             </b>
             <p> التوصيل مجانًا </p>
           </div>
-          <div class="btn_box">
+          <div className="btn_box">
             <button className="order-button-form">اطلب الآن</button>
           </div>
         </div>

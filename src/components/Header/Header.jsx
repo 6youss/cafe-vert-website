@@ -57,7 +57,9 @@ function Header(props) {
           Café Vert
           <b> الصفحة الرئيسية </b>
         </li>
-        <li className="menu-item menu-order-btn">اطلب</li>
+        <li onClick={()=>{
+          window.location.href='#order';
+        }} className="menu-item menu-order-btn">اطلب</li>
       </ul>
     );
   };

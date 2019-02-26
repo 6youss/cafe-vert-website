@@ -198,6 +198,7 @@
 /************************     2     ***********************************/
 
 .section5-2 {
+  margin-top: 20px; 
   border-radius: 5px;
   background: url(./images/bg_banner_02.jpg) no-repeat center;
   background-size: auto;

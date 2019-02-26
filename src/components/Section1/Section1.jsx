@@ -1,10 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
+import { LocaleContext } from "../../LocaleContext";
 import "./Section1.css";
 import girlsImg from "./images/girls.png";
 import prodBox from "./images/prod_three.png";
 import coffeBeans from "./images/coffe_beans1.png";
 
 const Section1 = () => {
+
+  const locale = useContext(LocaleContext);
+
   const orderClickHandler = () => {};
   return (
     <section className="section1">
@@ -19,7 +23,7 @@ const Section1 = () => {
           <img src={girlsImg} alt="girls pic" />
         </div>
         <div className="body-poster">
-          <h3>حرق الدهون</h3>
+          <h3>{locale.s1Title1}</h3>
           <h2>شراب</h2>
           <h1>قهوة!</h1>
           <div className="fast_eff">

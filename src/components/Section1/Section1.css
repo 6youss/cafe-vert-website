@@ -33,6 +33,7 @@
   z-index: 3;
 }
 .body-poster>h3{
+  direction: rtl;
   font-size: 76px;
   line-height: 1;
   font-weight: 300;

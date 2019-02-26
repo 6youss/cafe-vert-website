@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 
-export default function CustomSelect({ options,...rest }) {
+export default function CustomSelect( rest  ) {
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -14,7 +14,7 @@ export default function CustomSelect({ options,...rest }) {
       {...rest}
       isRtl = {true}
       isSearchable={false}
-      options={options}
+
       styles={customStyles}
       theme={theme => ({
         ...theme,
