@@ -1,67 +1,50 @@
 import React from "react";
 import "./Carousel.css";
-
-import womenTeaPic from "./images/women_tea.png";
-
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+
+import iPhonePic from "./images/iphone_03.png";
 
 const Carousel = () => {
 
-  let settings = {
-      centerMode: true,
-      dots: true,
-      infinite: true,
-      centerPadding: "60px",
-      speed: 300,
-      slidesToShow: 4,
-      slidesToScroll: 4,
-      initialSlide: 0,
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
-          }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2,
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          }
-        }
-      ]
-    };
-  
-  return (<Slider {...settings}>
-        <div>
-          <img src={womenTeaPic} alt="hhh"/>
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    initialSlide: 0
+  };
+
+  return (
+    <div className="mCarousel-bg">
+      <Slider {...settings}>
+        <div className="mCarousel-item">
+          <img src={iPhonePic} alt="phone" />
         </div>
-        <div>
-          <img src={womenTeaPic} alt="hhh"/>
+        <div className="mCarousel-item">
+          <img src={iPhonePic} alt="phone" />
         </div>
-        <div>
-          <img src={womenTeaPic} alt="hhh"/>
+        <div className="mCarousel-item">
+          <img src={iPhonePic} alt="phone" />
         </div>
-        <div>
-          <img src={womenTeaPic} alt="hhh"/>
+        <div className="mCarousel-item">
+          <img src={iPhonePic} alt="phone" />
         </div>
-        <div>
-          <img src={womenTeaPic} alt="hhh"/>
+        <div className="mCarousel-item">
+          <img src={iPhonePic} alt="phone" />
         </div>
-        <div>
-          <img src={womenTeaPic} alt="hhh"/>
+        <div className="mCarousel-item">
+          <img src={iPhonePic} alt="phone" />
         </div>
-      </Slider>);
+        <div className="mCarousel-item">
+          <img src={iPhonePic} alt="phone" />
+        </div>
+        
+      </Slider>
+    </div>
+  );
 };
 
 export default Carousel;

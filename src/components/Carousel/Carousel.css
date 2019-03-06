@@ -1,0 +1,15 @@
+.mCarousel-bg {
+  background: linear-gradient(
+    to bottom,
+    #1f1f1f 0%,
+    #1f1f1f 60%,
+    #ffffff 60%,
+    #1f1f1f 60%,
+    #ffffff 60%,
+    #ffffff 100%
+  );
+  padding: 40px 5%;
+}
+.mCarousel-item>img{
+  margin:auto;
+}

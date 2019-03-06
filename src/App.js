@@ -1,7 +1,6 @@
 import React, { useState,lazy ,Suspense } from "react";
 import "./App.css";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
+
 import Header from "./components/Header/Header";
 //import Section1 from "./components/Section1/Section1";
 import Section2 from "./components/Section2/Section2";
