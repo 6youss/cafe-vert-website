@@ -5,9 +5,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 import iPhonePic from "./images/iphone_03.png";
+import coms2 from "./images/coms2.png";
+import coms from "./images/coms.png";
 
 const Carousel = () => {
-
   const settings = {
     dots: true,
     infinite: true,
@@ -20,7 +21,7 @@ const Carousel = () => {
         breakpoint: 1186,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 3
         }
       },
       {
@@ -44,31 +45,66 @@ const Carousel = () => {
   return (
     <div className="mCarousel-bg">
       <Slider {...settings}>
-        <div className="mCarousel-item">
-          <img src={iPhonePic} alt="phone" />
+        <div>
+          <div className="mCarousel-item">
+            <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
+            <div className="mCarousel-item-coms">
+              <img src={coms2} alt="phone" />
+            </div>
+          </div>
         </div>
-        <div className="mCarousel-item">
-          <img src={iPhonePic} alt="phone" />
+        <div>
+          <div className="mCarousel-item">
+            <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
+            <div className="mCarousel-item-coms">
+              <img src={coms2} alt="phone" />
+            </div>
+          </div>
         </div>
-        <div className="mCarousel-item">
-          <img src={iPhonePic} alt="phone" />
+        <div>
+          <div className="mCarousel-item">
+            <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
+            <div className="mCarousel-item-coms">
+              <img src={coms2} alt="phone" />
+            </div>
+          </div>
         </div>
-        <div className="mCarousel-item">
-          <img src={iPhonePic} alt="phone" />
+        <div>
+          <div className="mCarousel-item">
+            <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
+            <div className="mCarousel-item-coms">
+              <img src={coms2} alt="phone" />
+            </div>
+          </div>
         </div>
-        <div className="mCarousel-item">
-          <img src={iPhonePic} alt="phone" />
+        <div>
+          <div className="mCarousel-item">
+            <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
+            <div className="mCarousel-item-coms">
+              <img src={coms2} alt="phone" />
+            </div>
+          </div>
         </div>
-        <div className="mCarousel-item">
-          <img src={iPhonePic} alt="phone" />
+        <div>
+          <div className="mCarousel-item">
+            <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
+            <div className="mCarousel-item-coms">
+              <img src={coms2} alt="phone" />
+            </div>
+          </div>
         </div>
-        <div className="mCarousel-item">
-          <img src={iPhonePic} alt="phone" />
+        <div>
+          <div className="mCarousel-item">
+            <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
+            <div className="mCarousel-item-coms">
+              <img src={coms2} alt="phone" />
+            </div>
+          </div>
         </div>
+        
       </Slider>
     </div>
   );
-
 };
 
 export default Carousel;

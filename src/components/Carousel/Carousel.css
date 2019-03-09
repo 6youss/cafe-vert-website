@@ -10,6 +10,21 @@
   );
   padding: 40px 5%;
 }
-.mCarousel-item>img{
+.mCarousel-item{
   margin:auto;
+  position: relative;
+}
+.mCarousel-item-phone{
+}
+.mCarousel-item-coms{
+  overflow: auto;
+  width: 227px;
+  height: 311px;
+  background: red;
+  position: absolute;
+  left: 29px;
+  top: 118px;
+}
+.mCarousel-item-coms>img{
+width: 100%;
 }
