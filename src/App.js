@@ -17,7 +17,7 @@ import { locales } from "./LocaleContext";
 const Section1 = lazy( () =>import ("./components/Section1/Section1") );
 
 function App() {
-  const [locale, setLocale] = useState(locales.ar);
+  const [locale, setLocale] = useState(locales.fr);
 
   const changeLanguage = () => {
     if (locale === locales.fr) {

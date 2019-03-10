@@ -43,23 +43,23 @@ function Header(props) {
         </li>
         <li className="menu-item">
           Café Vert
-          <b> تعليقات العملاء </b>
+          <b> {locale.menuItem2} </b>
         </li>
         <li className="menu-item">
           Café Vert
-          <b> إرشادات </b>
+          <b> {locale.menuItem3} </b>
         </li>
         <li className="menu-item">
           Café Vert
-          <b> المكونات </b>
+          <b> {locale.menuItem4} </b>
         </li>
         <li className="menu-item">
           Café Vert
-          <b> الصفحة الرئيسية </b>
+          <b> {locale.menuItem5} </b>
         </li>
         <li onClick={()=>{
           window.location.href='#order';
-        }} className="menu-item menu-order-btn">اطلب</li>
+        }} className="menu-item menu-order-btn">{locale.menuItem6}</li>
       </ul>
     );
   };

@@ -17,7 +17,7 @@
 
 .perso-input-text, input[type='text']{
     flex-basis: 100%;
-    padding: 10px 30px 10px 8px;
+    padding: 10px 10px 10px 8px;
     margin: 0px 0px 20px 0px;
     border: 1px solid #6ac619;
     border-radius: 5px;

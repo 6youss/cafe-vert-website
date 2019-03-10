@@ -24,38 +24,38 @@ const Section1 = () => {
         </div>
         <div className="body-poster">
           <h3>{locale.s1Title1}</h3>
-          <h2>شراب</h2>
-          <h1>قهوة!</h1>
+          <h2>{locale.s1Title2}</h2>
+          <h1>{locale.s1Title3}</h1>
           <div className="fast_eff">
-            <h4>أكثر فعالية وأسرع 5 مرات</h4>
+            <h4>{locale.s1Title4}</h4>
           </div>
           <ul className="fast_item">
             <li>
-              يساعد في خسارة الوزن.
-              <p> يساعد في رشاقة الجسم وخسارة الوزن. </p>
+            {locale.s1List1}
+              <p>{locale.s1List1d}</p>
             </li>
             <li>
-              في حرق الدهون عن الطرق العادية.
-              <p> يقي من المشكلات مثل السيلوليت. </p>
+            {locale.s1List2}
+              <p>{locale.s1List2d}</p>
             </li>
             <li>
-              ينظم التمثيل الغذائي.
-              <p> يساعدك في خسارة الوزن. </p>
+            {locale.s1List3}
+              <p> {locale.s1List3d}</p>
             </li>
             <li>
-              يساعد في الوقاية من الأمراض.
-              <p> يقوي جهاز المناعة. </p>
+            {locale.s1List4}
+              <p>  {locale.s1List4d}</p>
             </li>
           </ul>
           <div className="prod-info-box">
             <div className="prod-info-img">
               <img src={prodBox} alt="prod pic" />
               <button className="order-button" onClick={orderClickHandler}>
-                أطلب الآن
+                {locale.orderNow}
               </button>
             </div>
             <div className="prod-info-price">
-              <h5>دينار جزائري</h5>
+              <h5>{locale.currency}</h5>
               <div className="price_box neucha">
                 <span>3990</span> DZD
               </div>

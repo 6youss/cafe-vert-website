@@ -127,7 +127,7 @@
 }
 
 .order-button-form{
-  width: 150px;
+  min-width: 150px;
   padding: 0;
   cursor: pointer;
   text-align: center;
@@ -145,5 +145,5 @@
 }
 .order-button-form:hover{
   box-shadow: 0 0 0px 6px rgba(255, 255, 255, 0.6);
-  width: 160px;
+  min-width: 160px;
 }

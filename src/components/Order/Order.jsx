@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useContext } from "react";
 import "./Order.css";
 import threeProdPic from "../Section1/images/prod_three.png";
 import oneProdPic from "../Section3/images/prod.png";
@@ -6,6 +6,7 @@ import oneProdPic from "../Section3/images/prod.png";
 import Select from "../CustomSelect/CustomSelect";
 import Input from "../Input/Input";
 import Swal from "sweetalert2";
+import { LocaleContext } from "../../LocaleContext";
 
 const Order = () => {
   let [shownPic, setShownPic] = useState(oneProdPic);
@@ -16,7 +17,7 @@ const Order = () => {
     quantity: 1,
     CostumerWilaya: 1
   });
-
+  const locale = useContext(LocaleContext);
   function submit(e) {
     e.preventDefault();
     // formData.append("costumerName", "mehdi");
@@ -121,10 +122,11 @@ const Order = () => {
   }
 
   const productOptions = [
-    { label: "عبوة واحدة", target: { value: 1, name: "quantity" } },
-    { label: "2+1 عبوات", target: { value: 2, name: "quantity" } },
-    { label: "3+1 عبوات", target: { value: 3, name: "quantity" } }
+    { label: locale.oneProd, target: { value: 1, name: "quantity" } },
+    { label: locale.twoProd, target: { value: 2, name: "quantity" } },
+    { label: locale.threeProd, target: { value: 3, name: "quantity" } }
   ];
+  
   const wilayaOptions = [
     { label: "Adrar", target: { value: 1, name: "CostumerWilaya" } },
     { label: "Chlef", target: { value: 2, name: "CostumerWilaya" } },
@@ -186,7 +188,7 @@ const Order = () => {
           <img src={shownPic} alt="" />
         </div>
         <div className="order-left-price neucha">
-          <h4> {" 9000 DZD التوصيل مجانًا"} </h4>
+          <h4> {" 9000 DZD "+locale.freeDelivery} </h4>
         </div>
       </div>
       <div className="order-right">
@@ -201,7 +203,7 @@ const Order = () => {
         <Input
           handlechange={handleChange}
           disabled={true}
-          placeholder={"الجزائر"}
+          placeholder={locale.algeria}
           type="text"
         />
         <div className="order-select-container">
@@ -215,16 +217,16 @@ const Order = () => {
         <Input
           name="costumerName"
           handlechange={handleChange}
-          placeholder={"الإسم"}
+          placeholder={locale.name}
           type="text"
         />
         <Input
           name="costumerPhone"
           handlechange={handleChange}
-          placeholder={"رقم الهاتف"}
+          placeholder={locale.phoneNumber}
           type="text"
         />
-        <button className="order-button-form"> اطلب الآن </button>
+        <button className="order-button-form"> {locale.orderNow} </button>
       </div>
     </form>
   );
