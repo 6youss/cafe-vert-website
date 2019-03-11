@@ -1,7 +1,7 @@
 import React from "react";
 import Select from "react-select";
 
-export default function CustomSelect( rest  ) {
+export default function CustomSelect( props  ) {
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
@@ -11,7 +11,7 @@ export default function CustomSelect( rest  ) {
 
   return (
     <Select
-      {...rest}
+      {...props}
       isRtl = {true}
       isSearchable={false}
 

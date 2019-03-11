@@ -22,20 +22,19 @@
   flex-grow: 1;
 }
 .section7-body > h2 {
-  font-size: 48px;
-  line-height: 1;
+  font-size: 2.5em;
+  margin: 30px 0;
   font-weight: 800;
   color: #53a71b;
-  margin-bottom: 5px;
 }
 .section7-body > h3 {
-  font-size: 36px;
+  font-size: 2em;
   font-weight: 300;
   color: #fff;
 }
 .section7-body > p {
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1.5;
   color: #c5c5c5;
   margin: 10px 0;
 }
@@ -151,15 +150,16 @@
   box-shadow: 0px 0px 46px -8px rgba(0, 0, 0, 1);
 }
 .section7-black>h2{
-  font-size: 56px;
+  font-size: 2.5em;
   line-height: 1;
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
   color: #fff;
-  margin-bottom: 5px;
+  margin: 20px 0;
 }
 .section7-black>h3{
-  font-size: 20px;
+  font-size: 1em;
+  font-weight: 400;
   text-align: center;
   color: #fff;
 }

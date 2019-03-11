@@ -7,6 +7,7 @@ import Select from "../CustomSelect/CustomSelect";
 import Input from "../Input/Input";
 import Swal from "sweetalert2";
 import { LocaleContext } from "../../LocaleContext";
+import wilayaOptions from "./options";
 
 const Order = () => {
   let [shownPic, setShownPic] = useState(oneProdPic);
@@ -18,13 +19,17 @@ const Order = () => {
     CostumerWilaya: 1
   });
   const locale = useContext(LocaleContext);
+
+  let [selectedProduct, setSelectedProduct] = useState({ label: locale.oneProd, value: 1 });
+  let [selectedWilaya, setSelectedWilaya] = useState(wilayaOptions[0]);
+
+  
   function submit(e) {
     e.preventDefault();
-    // formData.append("costumerName", "mehdi");
-    // formData.append("costumerPhone", "0781630358");
-    // formData.append("quantity", "3");
-
+    // formData.append("costumerName", "mehdi");    
     var formData = new FormData();
+    formData.append("costumerWilaya", selectedWilaya.value);
+    formData.append("quantity", selectedProduct.value);
     Object.keys(fields).forEach(fieldName => {
       formData.append(fieldName, fields[fieldName]);
     });
@@ -121,64 +126,17 @@ const Order = () => {
     setFields(new_fields);
   }
 
+  function handleSelect(value){
+    setSelectedProduct(value);
+  }
+  function handleWilaya(value){
+    setSelectedWilaya(value);
+  }
+
   const productOptions = [
-    { label: locale.oneProd, target: { value: 1, name: "quantity" } },
-    { label: locale.twoProd, target: { value: 2, name: "quantity" } },
-    { label: locale.threeProd, target: { value: 3, name: "quantity" } }
-  ];
-  
-  const wilayaOptions = [
-    { label: "Adrar", target: { value: 1, name: "CostumerWilaya" } },
-    { label: "Chlef", target: { value: 2, name: "CostumerWilaya" } },
-    { label: "Laghouat", target: { value: 3, name: "CostumerWilaya" } },
-    { label: "Oum El Bouaghi", target: { value: 4, name: "CostumerWilaya" } },
-    { label: "Batna", target: { value: 5, name: "CostumerWilaya" } },
-    { label: "Béjaïa", target: { value: 6, name: "CostumerWilaya" } },
-    { label: "Biskra", target: { value: 7, name: "CostumerWilaya" } },
-    { label: "Béchar", target: { value: 8, name: "CostumerWilaya" } },
-    { label: "Blida", target: { value: 9, name: "CostumerWilaya" } },
-    { label: "Bouira", target: { value: 10, name: "CostumerWilaya" } },
-    { label: "Tamanrasset", target: { value: 11, name: "CostumerWilaya" } },
-    { label: "Tébessa", target: { value: 12, name: "CostumerWilaya" } },
-    { label: "Tlemcen", target: { value: 13, name: "CostumerWilaya" } },
-    { label: "Tiaret", target: { value: 14, name: "CostumerWilaya" } },
-    { label: "Tizi Ouzou", target: { value: 15, name: "CostumerWilaya" } },
-    { label: "Alger", target: { value: 16, name: "CostumerWilaya" } },
-    { label: "Djelfa", target: { value: 17, name: "CostumerWilaya" } },
-    { label: "Jijel", target: { value: 18, name: "CostumerWilaya" } },
-    { label: "Sétif", target: { value: 19, name: "CostumerWilaya" } },
-    { label: "Saïda", target: { value: 20, name: "CostumerWilaya" } },
-    { label: "Skikda", target: { value: 21, name: "CostumerWilaya" } },
-    { label: "Sidi Bel Abbès", target: { value: 22, name: "CostumerWilaya" } },
-    { label: "Annaba", target: { value: 23, name: "CostumerWilaya" } },
-    { label: "Guelma", target: { value: 24, name: "CostumerWilaya" } },
-    { label: "Constantine", target: { value: 25, name: "CostumerWilaya" } },
-    { label: "Médéa", target: { value: 26, name: "CostumerWilaya" } },
-    { label: "Mostaganem", target: { value: 27, name: "CostumerWilaya" } },
-    { label: "M'Sila", target: { value: 28, name: "CostumerWilaya" } },
-    { label: "Mascara", target: { value: 29, name: "CostumerWilaya" } },
-    { label: "Ouargla", target: { value: 30, name: "CostumerWilaya" } },
-    { label: "Oran", target: { value: 31, name: "CostumerWilaya" } },
-    { label: "El Bayadh", target: { value: 32, name: "CostumerWilaya" } },
-    { label: "Illizi", target: { value: 33, name: "CostumerWilaya" } },
-    {
-      label: "Bordj Bou Arreridj",
-      target: { value: 34, name: "CostumerWilaya" }
-    },
-    { label: "Boumerdès", target: { value: 35, name: "CostumerWilaya" } },
-    { label: "El Tarf", target: { value: 36, name: "CostumerWilaya" } },
-    { label: "Tindouf", target: { value: 37, name: "CostumerWilaya" } },
-    { label: "Tissemsilt", target: { value: 38, name: "CostumerWilaya" } },
-    { label: "El Oued", target: { value: 39, name: "CostumerWilaya" } },
-    { label: "Khenchela", target: { value: 40, name: "CostumerWilaya" } },
-    { label: "Souk Ahras", target: { value: 41, name: "CostumerWilaya" } },
-    { label: "Tipaza", target: { value: 42, name: "CostumerWilaya" } },
-    { label: "Mila", target: { value: 43, name: "CostumerWilaya" } },
-    { label: "Aïn Defla", target: { value: 44, name: "CostumerWilaya" } },
-    { label: "Naâma", target: { value: 45, name: "CostumerWilaya" } },
-    { label: "Témouchent", target: { value: 46, name: "CostumerWilaya" } },
-    { label: "Ghardaïa", target: { value: 47, name: "CostumerWilaya" } },
-    { label: "Relizane", target: { value: 48, name: "CostumerWilaya" } }
+    { label: locale.oneProd , value: 1 },
+    { label: locale.twoProd , value: 2 },
+    { label: locale.threeProd,value: 3 }
   ];
 
   return (
@@ -194,8 +152,8 @@ const Order = () => {
       <div className="order-right">
         <div className="order-select-container">
           <Select
-            onChange={handleChange}
-            defaultValue={productOptions[0].value}
+            onChange={handleSelect}
+            value={selectedProduct}
             placeholder={productOptions[0].label}
             options={productOptions}
           />
@@ -208,9 +166,9 @@ const Order = () => {
         />
         <div className="order-select-container">
           <Select
-            onChange={handleChange}
-            defaultValue={wilayaOptions[0].value}
-            placeholder={wilayaOptions[0].label}
+            onChange={handleWilaya}
+            value={selectedWilaya}
+            placeholder={selectedWilaya.label}
             options={wilayaOptions}
           />
         </div>

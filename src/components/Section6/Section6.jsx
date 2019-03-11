@@ -20,9 +20,9 @@ const Section6 = () => {
 
       </div>
         <div className="section6-2-circle">
-          <h4>أليس وقت</h4>
-          <h3>حرق الدهون</h3>
-          <h4>الآن؟</h4>
+          <h4>{locale.s4_40}</h4>
+          <h3>{locale.s4_41}</h3>
+          <h4>{locale.s4_42}</h4>
         </div>
 
         <h3>

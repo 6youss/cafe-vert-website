@@ -59,22 +59,20 @@
   align-items: center;
   text-align: center;
 }
-.prod-info-4 > h4 {
-  font-size: 66px;
-  font-weight: 800;
-  color: #212121;
-}
 
 .price_info_box > h3 {
-  font-size: 66px;
+  font-size: 3em;
   font-weight: 800;
+  margin: 15px;
   color: #212121;
   direction: rtl;
 }
+
 .price_box {
   direction: rtl;
   margin: 10px 0;
 }
+
 .price_box > p {
   display: inline;
   font-size: 20px;

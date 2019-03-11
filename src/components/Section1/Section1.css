@@ -34,7 +34,7 @@
 }
 .body-poster>h3{
   direction: rtl;
-  font-size: 76px;
+  font-size: 3.5em;
   line-height: 1;
   font-weight: 300;
   font-style: italic;
@@ -43,17 +43,19 @@
   margin-top: 20px;
 }
 .body-poster>h2{
-  font-size: 82px;
+  font-size: 5em;
   line-height: 1;
   font-weight: 800;
   color: #89b92f;
 }
 .body-poster>h1{
-  font-size: 136px;
+  font-size: 6em;
   line-height: 0.8;
   font-weight: 900;
   font-style: italic;
   color: #5d422d;
+  direction: rtl;
+  margin-top: 15px;
 }
 .fast_eff{
   display: inline-block;
@@ -64,10 +66,10 @@
   transform: skew(-20deg);
 }
 .fast_eff>h4{
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 300;
   font-style: italic;
-  letter-spacing: 5px;
+  letter-spacing: 3px;
   color: #795940;
 }
 .fast_item{
@@ -79,7 +81,7 @@
 .fast_item>li{
   position: relative;
   flex-basis: 50%;
-  font-size: 17px;
+  font-size: 1em;
   font-weight: bold;
   text-align: right;
   color: #5b402b;
@@ -98,7 +100,7 @@
   background: #7cbb24 url("./images/check_03.png") no-repeat center;
 }
 .fast_item>li>p{
-  font-size: 11px;
+  font-size: 0.8em;
   color: #837a75;
   margin-top: 4px;
 }
@@ -119,18 +121,18 @@
   text-align: center;
 }
 .prod-info-price>h5 {
-  font-size: 18px;
+  font-size: 1em;
   font-weight: bold;
   font-style: italic;
   color: #3f342b;
   margin-bottom: 10px;
 }
 .price_box{
-  font-size: 30px;
+  font-size: 2em;
   color: #3f342b;
 }
 .price_box>span{
-  font-size: 50px;
+  font-size: 2em;
 }
 .order-button{
   position: absolute;
@@ -140,11 +142,10 @@
   margin-right: auto; 
   bottom: 0;
   min-width: 150px;
-  padding: 0;
   cursor: pointer;
   text-align: center;
   color: #fff !important;
-  font-size: 33px;
+  font-size: 2em;
   font-family: 'Harmattan', sans-serif;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
   transition: 0.3s;
@@ -153,7 +154,7 @@
   border: none;
   border-bottom: 5px solid #722501;
   border-radius: 5px;
-  padding: 3px 0;
+  padding: 3px 10px;
 }
 .order-button:hover{
   box-shadow: 0 0 0px 6px rgba(255, 255, 255, 0.6);
@@ -186,19 +187,26 @@
     text-align: center;
   }
   .body-poster>h3{
-    font-size: 42px;
+    font-size: 2em;
+    margin-top: 50px;
   }
   .body-poster>h2{
-    font-size: 42px;
+    font-size: 2em;
   }
   .body-poster>h1{
-    font-size: 76px;
+    font-size: 3em;
+  }
+  .fast_eff>h4{
+    font-size: 1.4em;
   }
   .prod-info-img{
     margin: 10px 0;
     flex-basis: 100%;
   }
   .prod-info-price{
+    flex-basis: 100%;
+  }
+  .fast_item>li{
     flex-basis: 100%;
   }
 }

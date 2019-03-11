@@ -28,7 +28,7 @@ const Section7 = () => {
           </div>
           <div className="normal-coffee-pic">
             <img src={normalCoffeePic} alt="normal coffee" />
-            <span className="green-coffee-title"> القهوة العادية </span>
+            <span className="green-coffee-title"> {locale.s4_43} </span>
           </div>
         </div>
 

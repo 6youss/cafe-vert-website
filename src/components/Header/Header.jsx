@@ -2,25 +2,24 @@ import React, { useContext, useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./Header.css";
 import { LocaleContext } from "../../LocaleContext";
-import Languages from '../Languages/Languages'
+import Languages from "../Languages/Languages";
 
 function Header(props) {
-  
   const [isMobileSize, setIsMobileSize] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
   const locale = useContext(LocaleContext);
   useEffect(didMount);
 
   function didMount() {
-    window.addEventListener("resize",resize);
+    window.addEventListener("resize", resize);
     resize();
-    return ()=>{
-      window.removeEventListener("resize",resize);
-    }
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
   }
 
   function resize() {
-    let innerWidth = window.innerWidth <= 850;
+    let innerWidth = window.innerWidth <= 1080;
     if (innerWidth !== isMobileSize) {
       setIsMobileSize(innerWidth);
       setShowMenu(!innerWidth);
@@ -31,7 +30,7 @@ function Header(props) {
     setShowMenu(!showMenu);
   }
 
-  function MenuItems () {
+  function MenuItems() {
     return (
       <ul className={"menu-container"}>
         <li className="menu-item logo-box">
@@ -57,17 +56,22 @@ function Header(props) {
           Café Vert
           <b> {locale.menuItem5} </b>
         </li>
-        <li onClick={()=>{
-          window.location.href='#order';
-        }} className="menu-item menu-order-btn">{locale.menuItem6}</li>
+
+        <li
+          className="menu-item menu-order-btn"
+          onClick={() => {
+            window.location.href = "#order";
+          }}
+        >
+          {locale.menuItem6}
+        </li>
       </ul>
     );
-  };
+  }
 
-  
   return (
     <header className="menu">
-      <Languages changeLanguage = {props.changeLanguage}/>
+      <Languages changeLanguage={props.changeLanguage} />
       {isMobileSize && (
         <div className="nav-toggle" onClick={handleShowMenu}>
           <div>

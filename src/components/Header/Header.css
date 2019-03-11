@@ -28,11 +28,13 @@
   height:0px;
   transition: all 400ms ease-out;
 }
+
 .menu-item{
   display: inline-block;
   vertical-align: middle;
-  padding: 25px 20px;
-  font-size: 15px;
+  padding: 20px 20px;
+  height: 80px;
+  font-size: 0.8em;
   text-align: center;
   color: #b6b2b0;
   cursor: pointer;
@@ -46,7 +48,7 @@
 }
 .logo-box{
   position: relative;
-  font-size: 30px;
+  font-size: 1.8em;
   padding-left: 50px;
   border-bottom-left-radius: 10px;
   cursor: default;
@@ -89,6 +91,7 @@
   border-right: 0 solid transparent;
 }
 
+
 .nav-toggle{
   width: 100%;
   cursor: pointer;
@@ -116,7 +119,7 @@
 
 
 
-@media screen and (max-width: 850px){
+@media screen and (max-width: 1080px){
 
   .logo-box{
     border-bottom-left-radius: 0;
