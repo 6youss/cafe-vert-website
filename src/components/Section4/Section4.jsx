@@ -2,6 +2,7 @@ import React ,{useContext} from "react";
 import { LocaleContext } from "../../LocaleContext";
 import "./Section4.css";
 import prodPic from "../Section1/images/prod_three.png";
+import Button from '../Button/Button'
 
 const Section4 = () => {
   const locale = useContext(LocaleContext);
@@ -26,7 +27,7 @@ const Section4 = () => {
             <p> {locale.freeDelivery} </p>
           </div>
           <div className="btn_box">
-            <button className="order-button-form">{locale.orderNow}</button>
+            <Button className="order-button-form"/>
           </div>
         </div>
       </div>

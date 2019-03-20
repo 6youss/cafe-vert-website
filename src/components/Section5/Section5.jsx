@@ -6,6 +6,7 @@ import greenBean2 from "./images/obj_05.png";
 import prodPic from "../Section3/images/prod.png";
 import woman from "./images/women_tea.png";
 import checkPic from "../Section1/images/check_03.png";
+import Button from '../Button/Button'
 
 const Section5 = () => {
   const locale = useContext(LocaleContext);
@@ -70,7 +71,7 @@ const Section5 = () => {
             <div className="section5-right-prod">
               <div className="section5-right-prod-price neucha">
                 <p>3990 DZD</p>
-                <button className="order-button-form">{locale.orderNow}</button>
+                <Button className="order-button-form"/>
               </div>
               <div className="section5-right-prod-img">
                 <img src={prodPic} alt="product" />
@@ -98,7 +99,7 @@ const Section5 = () => {
               <h3>{locale.s4_23}</h3>
               <h4>{locale.s4_24}</h4>
               <h3>{locale.s4_25}</h3>
-              <button className="order-button-form">{locale.orderNow}</button>
+              <Button className="order-button-form"/>
             </div>
           </div>
         </div>

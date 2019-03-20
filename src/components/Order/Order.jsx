@@ -1,4 +1,4 @@
-import React, { useState,useContext } from "react";
+import React, { useState, useContext } from "react";
 import "./Order.css";
 import threeProdPic from "../Section1/images/prod_three.png";
 import oneProdPic from "../Section3/images/prod.png";
@@ -20,23 +20,23 @@ const Order = () => {
   });
   const locale = useContext(LocaleContext);
 
-  let [selectedProduct, setSelectedProduct] = useState({ label: locale.oneProd, value: 1 });
+  let [selectedProduct, setSelectedProduct] = useState({
+    label: locale.oneProd,
+    value: 1
+  });
   let [selectedWilaya, setSelectedWilaya] = useState(wilayaOptions[0]);
 
-  
   function submit(e) {
     e.preventDefault();
-    // formData.append("costumerName", "mehdi");    
     var formData = new FormData();
-    formData.append("costumerWilaya", selectedWilaya.value);
-    formData.append("quantity", selectedProduct.value);
+    let now = new Date();
     Object.keys(fields).forEach(fieldName => {
       formData.append(fieldName, fields[fieldName]);
     });
-
-    let now = new Date();
+    formData.append("quantity", selectedProduct.value);
     formData.append("orderDate", now.toISOString().split("T")[0]);
-
+    formData.append("costumerWilaya", selectedWilaya.value);
+    
     for (var pair of formData.entries()) {
       console.log(pair[0] + ", " + pair[1]);
     }
@@ -126,27 +126,27 @@ const Order = () => {
     setFields(new_fields);
   }
 
-  function handleSelect(value){
+  function handleSelect(value) {
     setSelectedProduct(value);
   }
-  function handleWilaya(value){
+  function handleWilaya(value) {
     setSelectedWilaya(value);
   }
 
   const productOptions = [
-    { label: locale.oneProd , value: 1 },
-    { label: locale.twoProd , value: 2 },
-    { label: locale.threeProd,value: 3 }
+    { label: locale.oneProd, value: 1 },
+    { label: locale.twoProd, value: 2 },
+    { label: locale.threeProd, value: 3 }
   ];
 
   return (
-    <form id="order" className="order" onSubmit={submit}>
+    <form id="order" className="order" onSubmit={submit} name="orderx">
       <div className="order-left">
         <div className="order-left-image">
           <img src={shownPic} alt="" />
         </div>
         <div className="order-left-price neucha">
-          <h4> {" 9000 DZD "+locale.freeDelivery} </h4>
+          <h4> {" 9000 DZD " + locale.freeDelivery} </h4>
         </div>
       </div>
       <div className="order-right">
@@ -154,7 +154,7 @@ const Order = () => {
           <Select
             onChange={handleSelect}
             value={selectedProduct}
-            placeholder={productOptions[0].label}
+            placeholder={selectedProduct.label}
             options={productOptions}
           />
         </div>

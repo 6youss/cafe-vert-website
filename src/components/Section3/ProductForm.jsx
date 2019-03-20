@@ -3,6 +3,7 @@ import { LocaleContext } from "../../LocaleContext";
 import "./ProductForm.css";
 import prodPic from "./images/prod.png";
 import threeProdPic from "../Section1/images/prod_three.png";
+import Button from '../Button/Button'
 
 const ProductForm = ({ count }) => {
   const locale = useContext(LocaleContext);
@@ -52,8 +53,7 @@ const ProductForm = ({ count }) => {
           <img src={countPic} alt="product" />
         </div>
         <b>{priceText} {count > 1 && <span> {locale.freeDelivery}</span>}</b>
-        
-        <button className="order-button-form">{locale.orderNow}</button>
+        <Button className="order-button-form"/>
       </div>
     </div>
   );

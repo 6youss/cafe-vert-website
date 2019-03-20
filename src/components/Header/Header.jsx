@@ -3,7 +3,10 @@ import { CSSTransition } from "react-transition-group";
 import "./Header.css";
 import { LocaleContext } from "../../LocaleContext";
 import Languages from "../Languages/Languages";
-
+import {
+  Events,
+  scroller
+} from "react-scroll";
 function Header(props) {
   const [isMobileSize, setIsMobileSize] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
@@ -11,9 +14,19 @@ function Header(props) {
   useEffect(didMount);
 
   function didMount() {
+    Events.scrollEvent.register("begin", function() {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register("end", function() {
+      console.log("end", arguments);
+    });
+
     window.addEventListener("resize", resize);
     resize();
     return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
       window.removeEventListener("resize", resize);
     };
   }
@@ -60,7 +73,12 @@ function Header(props) {
         <li
           className="menu-item menu-order-btn"
           onClick={() => {
-            window.location.href = "#order";
+            scroller.scrollTo('orderx', {
+              duration: 500,
+              delay: 0,
+              smooth: 'easeInOutQuart'
+            });
+            //window.location.href = "#order";
           }}
         >
           {locale.menuItem6}

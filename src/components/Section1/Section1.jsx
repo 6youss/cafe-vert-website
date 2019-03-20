@@ -1,6 +1,7 @@
 import React,{useContext} from "react";
 import { LocaleContext } from "../../LocaleContext";
 import "./Section1.css";
+import Button from '../Button/Button'
 import girlsImg from "./images/girls.png";
 import prodBox from "./images/prod_three.png";
 import coffeBeans from "./images/coffe_beans1.png";
@@ -8,8 +9,6 @@ import coffeBeans from "./images/coffe_beans1.png";
 const Section1 = () => {
 
   const locale = useContext(LocaleContext);
-
-  const orderClickHandler = () => {};
   return (
     <section className="section1">
       <div className="body-container">  
@@ -50,9 +49,7 @@ const Section1 = () => {
           <div className="prod-info-box">
             <div className="prod-info-img">
               <img src={prodBox} alt="prod pic" />
-              <button className="order-button" onClick={orderClickHandler}>
-                {locale.orderNow}
-              </button>
+              <Button className="order-button"/>
             </div>
             <div className="prod-info-price">
               <h5>{locale.currency}</h5>
