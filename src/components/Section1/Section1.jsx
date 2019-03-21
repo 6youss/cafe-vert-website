@@ -10,7 +10,7 @@ const Section1 = () => {
 
   const locale = useContext(LocaleContext);
   return (
-    <section className="section1">
+    <section className="section1" name="principal_page">
       <div className="body-container">  
         <div className="caffe-beans1">
           <img src={coffeBeans} alt="caffe beans" />

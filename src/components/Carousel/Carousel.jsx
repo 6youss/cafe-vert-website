@@ -43,7 +43,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="mCarousel-bg">
+    <div className="mCarousel-bg" name="comments">
       <Slider {...settings}>
         <div>
           <div className="mCarousel-item">

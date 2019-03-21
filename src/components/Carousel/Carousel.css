@@ -11,8 +11,9 @@
   padding: 40px 5%;
 }
 .mCarousel-item{
-  margin:auto;
   position: relative;
+  margin: auto;
+  width: 274px;
 }
 .mCarousel-item-phone{
 }

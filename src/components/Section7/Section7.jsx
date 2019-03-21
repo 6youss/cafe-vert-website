@@ -8,7 +8,7 @@ import greenCoffeePic from "./images/green_02.png";
 const Section7 = () => {
   const locale = useContext(LocaleContext);
   return (
-    <section className="section7">
+    <section className="section7" name="diet">
       <div className="coffee-girl-container">
         <div className="coffee-girl">
           <img src={coffeeGirl} alt="coffee girl" />

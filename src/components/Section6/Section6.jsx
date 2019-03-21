@@ -6,7 +6,7 @@ import womanImg from "./images/women.png";
 const Section6 = () => {
   const locale = useContext(LocaleContext);
   return (
-    <section className="section6">
+    <section className="section6" name="instructions">
       <div className="section6-1">
         <h2>{locale.s4_27}</h2>
         <h3>

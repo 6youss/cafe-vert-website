@@ -11,7 +11,7 @@ import Button from '../Button/Button'
 const Section5 = () => {
   const locale = useContext(LocaleContext);
   return (
-    <section className="section5">
+    <section className="section5" name="ingredients">
       <div className="section5-1">
         <div className="section5-left">
           <div>
