@@ -4,20 +4,17 @@ import "./Header.css";
 import { LocaleContext } from "../../LocaleContext";
 import Languages from "../Languages/Languages";
 import { Events, scroller } from "react-scroll";
+
 function Header(props) {
+  
   const [isMobileSize, setIsMobileSize] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
-  const locale = useContext(LocaleContext);
-  useEffect(didMount);
+  const [locale,changeLanguage] = useContext(LocaleContext);
+  
+  useEffect(()=>{
+    Events.scrollEvent.register("begin");
 
-  function didMount() {
-    Events.scrollEvent.register("begin", function() {
-      console.log("begin", arguments);
-    });
-
-    Events.scrollEvent.register("end", function() {
-      console.log("end", arguments);
-    });
+    Events.scrollEvent.register("end");
 
     window.addEventListener("resize", resize);
     resize();
@@ -26,7 +23,7 @@ function Header(props) {
       Events.scrollEvent.remove("end");
       window.removeEventListener("resize", resize);
     };
-  }
+  });
 
   function resize() {
     let innerWidth = window.innerWidth <= 1080;
@@ -108,7 +105,7 @@ function Header(props) {
 
   return (
     <header className="menu">
-      <Languages changeLanguage={props.changeLanguage} />
+      <Languages changeLanguage={changeLanguage} />
       {isMobileSize && (
         <div className="nav-toggle" onClick={handleShowMenu}>
           <div>

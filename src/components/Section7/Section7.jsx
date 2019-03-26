@@ -6,7 +6,7 @@ import normalCoffeePic from "./images/green_01.png";
 import greenCoffeePic from "./images/green_02.png";
 
 const Section7 = () => {
-  const locale = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
   return (
     <section className="section7" name="diet">
       <div className="coffee-girl-container">

@@ -6,7 +6,7 @@ import threeProdPic from "../Section1/images/prod_three.png";
 import Button from '../Button/Button'
 
 const ProductForm = ({ count }) => {
-  const locale = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
 
   let countClass;
   let countPic;

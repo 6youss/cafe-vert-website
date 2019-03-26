@@ -8,7 +8,7 @@ import coffeBeans from "./images/coffe_beans1.png";
 
 const Section1 = () => {
 
-  const locale = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
   return (
     <section className="section1" name="principal_page">
       <div className="body-container">  

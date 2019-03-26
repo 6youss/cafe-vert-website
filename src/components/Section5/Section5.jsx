@@ -9,7 +9,7 @@ import checkPic from "../Section1/images/check_03.png";
 import Button from '../Button/Button'
 
 const Section5 = () => {
-  const locale = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
   return (
     <section className="section5" name="ingredients">
       <div className="section5-1">

@@ -3,7 +3,7 @@ import { LocaleContext } from "../../LocaleContext";
 import { scroller } from "react-scroll";
 
 function Button({ className }) {
-  const locale = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
 
   return (
     <button

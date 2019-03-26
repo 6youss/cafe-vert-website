@@ -10,6 +10,7 @@ import { LocaleContext } from "../../LocaleContext";
 import wilayaOptions from "./options";
 
 const Order = () => {
+
   let [shownPic, setShownPic] = useState(oneProdPic);
 
   let [fields, setFields] = useState({
@@ -18,7 +19,7 @@ const Order = () => {
     quantity: 1,
     CostumerWilaya: 1
   });
-  const locale = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
 
   let [selectedProduct, setSelectedProduct] = useState({
     label: locale.oneProd,
@@ -37,10 +38,6 @@ const Order = () => {
     formData.append("orderDate", now.toISOString().split("T")[0]);
     formData.append("costumerWilaya", selectedWilaya.value);
     
-    for (var pair of formData.entries()) {
-      console.log(pair[0] + ", " + pair[1]);
-    }
-
     Swal.fire({
       confirmButtonColor: "#89b92f",
       onOpen: () => {
@@ -72,30 +69,6 @@ const Order = () => {
       },
       allowOutsideClick: () => !Swal.isLoading()
     });
-
-    // fetch(`http://localhost:80/greenTea/routes/php/sendOrders.php`, {
-    //   method: "POST",
-    //   body: formData
-    // })
-    //   .then(response => response.json())
-    //   .then(json => {
-    //     Swal.fire({
-    //       title: "Error!",
-    //       text: "Do you want to continue",
-    //       type: "error",
-    //       confirmButtonText: "Cool"
-    //     });
-
-    //     console.log(json);
-    //   })
-    //   .catch(error => {
-    //     Swal.fire({
-    //       title: "Error!",
-    //       text: error,
-    //       type: "error",
-    //       confirmButtonText: "Cool"
-    //     });
-    //   });
   }
 
   function handleChange(event) {

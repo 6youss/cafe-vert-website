@@ -1,4 +1,4 @@
-import React, { useState,lazy ,Suspense } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import "./App.css";
 
 import Header from "./components/Header/Header";
@@ -14,10 +14,10 @@ import Carousel from "./components/Carousel/Carousel";
 import { LocaleContext } from "./LocaleContext";
 import { locales } from "./LocaleContext";
 
-const Section1 = lazy( () =>import ("./components/Section1/Section1") );
+const Section1 = lazy(() => import("./components/Section1/Section1"));
 
 function App() {
-  const [locale, setLocale] = useState(locales.fr);
+  const [locale, setLocale] = useState(locales.ar);
 
   const changeLanguage = () => {
     if (locale === locales.fr) {
@@ -28,9 +28,9 @@ function App() {
   };
 
   return (
-    <LocaleContext.Provider value={locale}>
-      <Suspense fallback={<div> kh kh kh kh</div>}>
-        <Header changeLanguage={changeLanguage} />
+    <LocaleContext.Provider value={[locale,changeLanguage]}>
+      <Suspense fallback={<Loading />}>
+        <Header />
         <Section1 />
         <Section2 />
         <Section3 />
@@ -38,11 +38,31 @@ function App() {
         <Section5 />
         <Section6 />
         <Section7 />
-        <Carousel/>
+        <Carousel />
         <Section3 />
         <Order />
       </Suspense>
     </LocaleContext.Provider>
+  );
+}
+
+const loading_styles = {
+  container: {
+    height: "100%",
+    background: "white",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  content: {
+    color: "#89b92f"
+  }
+};
+function Loading() {
+  return (
+    <div style={loading_styles.container}>
+      <p style={loading_styles.content}>Loading...</p>
+    </div>
   );
 }
 

@@ -4,7 +4,7 @@ import "./Section2.css";
 
 const Section2 = () => {
   
-  const locale = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
   
   return (
     <section className="section2">
