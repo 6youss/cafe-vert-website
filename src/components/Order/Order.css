@@ -36,7 +36,7 @@
   z-index: 1;
 }
 
-.order-left-image::before {
+.two-selected::before {
   content: "";
   position: absolute;
   z-index: 0;
@@ -49,7 +49,7 @@
   filter: blur(2px);
   bottom: 25px;
 }
-.order-left-image::after {
+.two-selected::after {
   content: "";
   position: absolute;
   z-index: 0;
@@ -61,6 +61,20 @@
   background-size: contain;
   filter: blur(2px);
   bottom: 30px;
+}
+
+.three-selected::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: 50px;
+  width: 50%;
+  height: 120%;
+  background: url(../../components/Section3/images/prod.png) no-repeat center;
+  background-size: auto;
+  background-size: contain;
+  filter: blur(2px);
+  bottom: 0px;
 }
 
 .order-right {

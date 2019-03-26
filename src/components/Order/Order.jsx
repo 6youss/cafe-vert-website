@@ -12,8 +12,6 @@ import wilayaOptions from "./options";
 
 const Order = () => {
 
-  let [shownPic, setShownPic] = useState(oneProdPic);
-
   let [fields, setFields] = useState({
     costumerName: "",
     costumerPhone: "",
@@ -106,15 +104,37 @@ const Order = () => {
     { label: locale.twoProd, value: 2 },
     { label: locale.threeProd, value: 3 }
   ];
-
+  
+  let price;
+  let shownPic;
+  let productsClass;
+  switch(selectedProduct.value){
+    case 1:
+      price = 3990;
+      shownPic = oneProdPic;
+      productsClass = "order-left-image one-selected"
+    break;
+    case 2:
+      price = 9000;
+      shownPic = oneProdPic;
+      productsClass = "order-left-image two-selected"
+    break;
+    case 3:
+      price = 12000;
+      shownPic = threeProdPic;
+      productsClass = "order-left-image three-selected"
+    break;
+    default:
+  }
+  
   return (
     <form id="order" className="order" onSubmit={submit} name="orderx">
       <div className="order-left">
-        <div className="order-left-image">
+        <div className={productsClass}>
           <img src={shownPic} alt="" />
         </div>
         <div className="order-left-price neucha">
-          <h4> {" 9000 DZD " + locale.freeDelivery} </h4>
+          <h4> {`DZD ${ price } ` + locale.freeDelivery} </h4>
         </div>
       </div>
       <div className="order-right">
