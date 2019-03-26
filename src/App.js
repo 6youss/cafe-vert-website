@@ -16,8 +16,23 @@ import { locales } from "./LocaleContext";
 
 const Section1 = lazy(() => import("./components/Section1/Section1"));
 
+const productOptions = [
+  { label: "", value: 1 },
+  { label: "", value: 2 },
+  { label: "", value: 3 }
+];
+export const ProductContext = React.createContext([productOptions,()=>{}]);
+
 function App() {
   const [locale, setLocale] = useState(locales.ar);
+  
+  const productOptions = [
+    { label: locale.oneProd, value: 1 },
+    { label: locale.twoProd, value: 2 },
+    { label: locale.threeProd, value: 3 }
+  ];
+
+  const [selectedProduct, setSelectedProduct] = useState(productOptions[2]);
 
   const changeLanguage = () => {
     if (locale === locales.fr) {
@@ -26,9 +41,13 @@ function App() {
       setLocale(locales.fr);
     }
   };
+  const changeSelectedProduct = ( number ) => {
+    setSelectedProduct(number)
+  };
 
   return (
     <LocaleContext.Provider value={[locale,changeLanguage]}>
+    <ProductContext.Provider value={[selectedProduct,changeSelectedProduct]}>
       <Suspense fallback={<Loading />}>
         <Header />
         <Section1 />
@@ -42,6 +61,7 @@ function App() {
         <Section3 />
         <Order />
       </Suspense>
+      </ProductContext.Provider>
     </LocaleContext.Provider>
   );
 }

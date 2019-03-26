@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
 import { LocaleContext } from "../../LocaleContext";
+
 import "./ProductForm.css";
 import prodPic from "./images/prod.png";
 import threeProdPic from "../Section1/images/prod_three.png";
 import Button from '../Button/Button'
 
 const ProductForm = ({ count }) => {
+
   const [locale] = useContext(LocaleContext);
 
   let countClass;
@@ -53,7 +55,7 @@ const ProductForm = ({ count }) => {
           <img src={countPic} alt="product" />
         </div>
         <b>{priceText} {count > 1 && <span> {locale.freeDelivery}</span>}</b>
-        <Button className="order-button-form"/>
+        <Button productCount={count-1} className="order-button-form"/>
       </div>
     </div>
   );

@@ -7,6 +7,7 @@ import Select from "../CustomSelect/CustomSelect";
 import Input from "../Input/Input";
 import Swal from "sweetalert2";
 import { LocaleContext } from "../../LocaleContext";
+import { ProductContext } from "../../App";
 import wilayaOptions from "./options";
 
 const Order = () => {
@@ -20,11 +21,8 @@ const Order = () => {
     CostumerWilaya: 1
   });
   const [locale] = useContext(LocaleContext);
+  const [selectedProduct,changeSelectedProduct] = useContext(ProductContext);
 
-  let [selectedProduct, setSelectedProduct] = useState({
-    label: locale.oneProd,
-    value: 1
-  });
   let [selectedWilaya, setSelectedWilaya] = useState(wilayaOptions[0]);
 
   function submit(e) {
@@ -99,9 +97,6 @@ const Order = () => {
     setFields(new_fields);
   }
 
-  function handleSelect(value) {
-    setSelectedProduct(value);
-  }
   function handleWilaya(value) {
     setSelectedWilaya(value);
   }
@@ -125,7 +120,7 @@ const Order = () => {
       <div className="order-right">
         <div className="order-select-container">
           <Select
-            onChange={handleSelect}
+            onChange={changeSelectedProduct}
             value={selectedProduct}
             placeholder={selectedProduct.label}
             options={productOptions}
