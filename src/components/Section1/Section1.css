@@ -1,5 +1,6 @@
 
 .section1{
+  overflow: hidden;
   display: flex;
   position: relative;
   background: url('./images/bg_01.jpg') no-repeat center top;
@@ -11,6 +12,19 @@
   display: flex;
   flex-wrap: wrap;
   padding: 80px 5% 0 5%;
+}
+.caffe-beans1{
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+.caffe-beans2{
+  z-index: 2;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 .girls{
   flex-basis: 30%;
@@ -160,19 +174,7 @@
   box-shadow: 0 0 0px 6px rgba(255, 255, 255, 0.6);
   min-width: 160px;
 }
-.caffe-beans1{
-  z-index: 2;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: scaleX(-1);
-}
-.caffe-beans2{
-  z-index: 2;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-}
+
 
 @media screen and (max-width: 639px){
   .body-container{

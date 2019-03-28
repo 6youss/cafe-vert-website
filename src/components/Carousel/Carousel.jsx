@@ -3,11 +3,8 @@ import "./Carousel.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
 import iPhonePic from "./images/iphone_03.png";
-import defaultAvatar from "./images/avatar.jpg";
-import ava_04 from "./images/ava_04.jpg";
-import ava_08 from "./images/ava_08.jpg";
+import slidesData from './comments'
 
 const Carousel = () => {
   const settings = {
@@ -65,125 +62,6 @@ function Comment({ profileName, profilePic, comText, comTime }) {
     </div>
   );
 }
-
-let slidesData = [
-  [
-    {
-      profileName: "Médina Abdellaoui",
-      profilePic: ava_04,
-      comText: "Je tenais à témoigner sur l'efficacité du café vert.",
-      comTime: "une heure."
-    },
-    {
-      profileName: "Soumia Sam",
-      profilePic: ava_08,
-      comText: "J'ai 38 ans et j'ai perdu 9 kg en 2 mois. Merci infiniment.",
-      comTime: "14 heures."
-    },
-    {
-      profileName: "1.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "Aghiles",
-      profilePic: defaultAvatar,
-      comText: "hani is a bitch i hate him.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "1.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    }
-  ],
-  [
-    {
-      profileName: "2.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "2.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    }
-  ],
-  [
-    {
-      profileName: "3.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "3.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    }
-  ],
-  [
-    {
-      profileName: "4.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "4.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    }
-  ],
-  [
-    {
-      profileName: "5.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "5.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    }
-  ],
-  [
-    {
-      profileName: "6.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "6.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    }
-  ],
-  [
-    {
-      profileName: "7.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "7.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    }
-  ]
-];
 
 const respensiveArray = [
   {

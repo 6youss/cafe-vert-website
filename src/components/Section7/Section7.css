@@ -5,6 +5,7 @@
   flex-wrap: wrap;
   padding: 0 5% 70px 5%;
   justify-content: space-between;
+  overflow: hidden;
 }
 .coffee-girl {
   flex-grow: 1;
@@ -164,19 +165,23 @@
   color: #fff;
 }
 @media only screen and (max-width: 800px) {
+  .section7-green {
+    overflow: hidden;
+  }
   .section7-green-titles {
     flex-basis: 100%;
-    margin-top: 130px;
+    margin-top: 200px;
   }
-
   .section7-green-images {
     flex-basis: 30%;
   }
 
   .normal-coffee-pic {
-    margin-left: 15%;
+    top: 25px;
+    margin-left: 5%;
   }
   .green-coffee-pic {
-    margin-left: 15%;
+    top: 50px;
+    margin-left: 10%;
   }
 }

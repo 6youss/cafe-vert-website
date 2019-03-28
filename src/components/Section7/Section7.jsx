@@ -21,7 +21,7 @@ const Section7 = () => {
       </div>
 
       <div className="section7-green">
-        <div className="section7-green-images">
+        <div className="section7-green-images"> 
           <div className="green-coffee-pic">
             <img src={greenCoffeePic} alt="green coffee" />
             <span className="green-coffee-title"> Café Vert </span>

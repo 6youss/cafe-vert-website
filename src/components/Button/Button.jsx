@@ -18,7 +18,7 @@ function Button({ className , productCount }) {
     <button
       className={className}
       onClick={() => {
-        scroller.scrollTo("orderx", {
+        scroller.scrollTo("orderx", { 
           duration: 500,
           delay: 0,
           smooth: "easeInOutQuart"
