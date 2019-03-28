@@ -15,24 +15,6 @@ const comments = [
       profilePic: ava_08,
       comText: "J'ai 38 ans et j'ai perdu 9 kg en 2 mois. Merci infiniment.",
       comTime: "14 heures."
-    },
-    {
-      profileName: "1.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "Aghiles",
-      profilePic: defaultAvatar,
-      comText: "hani is a bitch i hate him.",
-      comTime: "since one hour."
-    },
-    {
-      profileName: "1.2",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
     }
   ],
   [

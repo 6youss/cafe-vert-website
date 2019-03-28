@@ -76,6 +76,32 @@
   filter: blur(2px);
   bottom: 0px;
 }
+.four-selected::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: 50px;
+  width: 50%;
+  height: 120%;
+  background: url(../../components/Section3/images/prod.png) no-repeat center;
+  background-size: auto;
+  background-size: contain;
+  filter: blur(2px);
+  bottom: 0px;
+}
+.four-selected::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: 80px;
+  width: 40%;
+  height: 90%;
+  background: url(../../components/Section3/images/prod.png) no-repeat center;
+  background-size: auto;
+  background-size: contain;
+  filter: blur(2px);
+  bottom: 30px;
+}
 
 .order-right {
   display: flex;

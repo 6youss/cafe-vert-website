@@ -9,7 +9,8 @@ function Button({ className , productCount }) {
   const productOptions = [
     { label: locale.oneProd, value: 1 },
     { label: locale.twoProd, value: 2 },
-    { label: locale.threeProd, value: 3 }
+    { label: locale.threeProd, value: 3 },
+    { label: locale.fourProd, value: 4 }
   ];
 
   const [selectedProduct , setSelectedProduct] = useContext(ProductContext);

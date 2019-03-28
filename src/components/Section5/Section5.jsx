@@ -71,7 +71,7 @@ const Section5 = () => {
             <div className="section5-right-prod">
               <div className="section5-right-prod-price neucha">
                 <p>3990 DZD</p>
-                <Button className="order-button-form"/>
+                <Button productCount={0} className="order-button-form"/>
               </div>
               <div className="section5-right-prod-img">
                 <img src={prodPic} alt="product" />
@@ -99,7 +99,7 @@ const Section5 = () => {
               <h3>{locale.s4_23}</h3>
               <h4>{locale.s4_24}</h4>
               <h3>{locale.s4_25}</h3>
-              <Button className="order-button-form"/>
+              <Button productCount={0} className="order-button-form"/>
             </div>
           </div>
         </div>

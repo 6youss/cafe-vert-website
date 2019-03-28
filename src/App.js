@@ -19,7 +19,8 @@ const Section1 = lazy(() => import("./components/Section1/Section1"));
 const productOptions = [
   { label: "", value: 1 },
   { label: "", value: 2 },
-  { label: "", value: 3 }
+  { label: "", value: 3 },
+  { label: "", value: 4 }
 ];
 export const ProductContext = React.createContext([productOptions,()=>{}]);
 
@@ -29,10 +30,11 @@ function App() {
   const productOptions = [
     { label: locale.oneProd, value: 1 },
     { label: locale.twoProd, value: 2 },
-    { label: locale.threeProd, value: 3 }
+    { label: locale.threeProd, value: 3 },
+    { label: locale.fourProd, value: 4 }
   ];
 
-  const [selectedProduct, setSelectedProduct] = useState(productOptions[2]);
+  const [selectedProduct, setSelectedProduct] = useState(productOptions[3]);
 
   const changeLanguage = () => {
     if (locale === locales.fr) {

@@ -49,7 +49,7 @@ const Section1 = () => {
           <div className="prod-info-box">
             <div className="prod-info-img">
               <img src={prodBox} alt="prod pic" />
-              <Button className="order-button"/>
+              <Button productCount={0} className="order-button"/>
             </div>
             <div className="prod-info-price">
               <h5>{locale.currency}</h5>

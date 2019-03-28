@@ -19,7 +19,7 @@ const Order = () => {
     CostumerWilaya: 1
   });
   const [locale] = useContext(LocaleContext);
-  const [selectedProduct,changeSelectedProduct] = useContext(ProductContext);
+  let [selectedProduct,changeSelectedProduct] = useContext(ProductContext);
 
   let [selectedWilaya, setSelectedWilaya] = useState(wilayaOptions[0]);
 
@@ -102,12 +102,15 @@ const Order = () => {
   const productOptions = [
     { label: locale.oneProd, value: 1 },
     { label: locale.twoProd, value: 2 },
-    { label: locale.threeProd, value: 3 }
+    { label: locale.threeProd, value: 3 },
+    { label: locale.fourProd, value: 4 }
   ];
   
   let price;
   let shownPic;
   let productsClass;
+  if(!selectedProduct)
+    changeSelectedProduct( productOptions[3] );
   switch(selectedProduct.value){
     case 1:
       price = 3990;
@@ -123,6 +126,11 @@ const Order = () => {
       price = 12000;
       shownPic = threeProdPic;
       productsClass = "order-left-image three-selected"
+    break;
+    case 4:
+      price = 15000;
+      shownPic = threeProdPic;
+      productsClass = "order-left-image four-selected"
     break;
     default:
   }

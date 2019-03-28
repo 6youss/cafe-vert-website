@@ -27,7 +27,7 @@ const Section4 = () => {
             <p> {locale.freeDelivery} </p>
           </div>
           <div className="btn_box">
-            <Button className="order-button-form"/>
+            <Button productCount={3} className="order-button-form"/>
           </div>
         </div>
       </div>
