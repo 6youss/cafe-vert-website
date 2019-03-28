@@ -1,6 +1,7 @@
-import defaultAvatar from "./images/avatar.jpg";
-import ava_04 from "./images/ava_04.jpg";
-import ava_08 from "./images/ava_08.jpg";
+import defaultAvatar from "./avatars/avatar.jpg";
+import ava_01 from "./avatars/ava_01.jpg";
+import ava_04 from "./avatars/ava_04.jpg";
+import ava_08 from "./avatars/ava_08.jpg";
 
 const comments = [
   [
@@ -19,86 +20,87 @@ const comments = [
   ],
   [
     {
-      profileName: "2.1",
+      profileName: "سمية",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: " ! هايل ",
+      comTime: "50 minutes."
     },
     {
-      profileName: "2.2",
+      profileName: "Fatine Alioua",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "Merci j'ai reçu ma commande dans une semaine",
+      comTime: "une heure."
     }
   ],
   [
     {
-      profileName: "3.1",
-      profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      profileName: "Manel",
+      profilePic: ava_01,
+      comText: "El café hada sah mlih ma soeur kanat tcharbo men 75kg walat 65kg, il faut just bien choisir ce qu'on mange avec",
+      comTime: "Hier."
     },
     {
-      profileName: "3.2",
+      profileName: "Lyn da",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "Merci beaucoups !",
+      comTime: "3 heures."
     }
   ],
   [
     {
-      profileName: "4.1",
+      profileName: "Amina Louibi",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "اشتريته وأنا في بلجيكا! :))",
+      comTime: "2 heures."
     },
     {
-      profileName: "4.2",
+      profileName: "لويزة",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "الطلب وصل بعد أسبوع واحد، مكنتش قادرة نتبع وزني لأني كنت مشغولة جدا، روحت اليوم وزنت نفسي واكتشفت أني خسرت 2 كغ",
+      comTime: "1 heure."
     }
   ],
   [
     {
-      profileName: "5.1",
+      profileName: "Maroua Elhachemi",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "بالفعل فقدت الوزن",
+      comTime: "5 heures"
     },
     {
-      profileName: "5.2",
+      profileName: "دليلة مالي",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "جرب القهوة الخضراء مع شريحة من الليمون. طعم لذيذ جدًا. )).",
+      comTime: "6 heures"
     }
   ],
   [
     {
-      profileName: "6.1",
+      profileName: "Kamelia Khaled",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "استخدم المنتج وسعيدة جدًا معه. أبلغت جميع أصدقائي عنه واشتروه وسعداء جدًا بيه. أوصي الكل بشرائه.",
+      comTime: "Hier."
     },
     {
-      profileName: "6.2",
+      profileName: "نصيرة زيتوني",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "هذا وين استلمت العبوة وبدأت العلاج اليوم. أتمنى يجيب نتائج حلوة معايا أنا تاني.",
+      comTime: "Deux jours."
     }
   ],
   [
     {
-      profileName: "7.1",
+      profileName: "Sabrina Maria",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: `صباح الخير :) بفضل خسرت 6 كيلو من وزني. اشتريت عبوة تاني باش نحافظ على رشاقتي لكن أكياس القهوة مجتش مع التسليم. وهدا كان سبب إني أكتب رسالة للشركة ووصلت في اليوم
+      التالي. شكرًا`,
+      comTime: "50 minutes."
     },
     {
-      profileName: "7.2",
+      profileName: "Ahlam Benali",
       profilePic: defaultAvatar,
-      comText: "lorem ipsum dolor sit amaert sdsqd.",
-      comTime: "since one hour."
+      comText: "Moi je l'admire bien !",
+      comTime: "Une heure."
     }
   ]
 ];

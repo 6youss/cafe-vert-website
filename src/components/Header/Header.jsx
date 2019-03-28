@@ -119,7 +119,7 @@ function Header(props) {
         key={1}
         in={showMenu}
         classNames="menu-animation"
-        timeout={400}
+        timeout={200}
         unmountOnExit
       >
         <MenuItems />

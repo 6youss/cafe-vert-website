@@ -16,17 +16,17 @@
   height:0px
 }
 .menu-animation-enter.menu-animation-enter-active{
-  height:560px;
-  transition: all 400ms ease-in;
+  height:300px;
+  transition: all 200ms ease-in;
 }
 
 .menu-animation-exit{
-  height:560px;
+  height:300px;
 }
 
 .menu-animation-exit.menu-animation-exit-active{
   height:0px;
-  transition: all 400ms ease-out;
+  transition: all 200ms ease-out;
 }
 
 .menu-item{
@@ -119,13 +119,13 @@
 
 
 @media screen and (max-width: 1080px){
-
   .logo-box{
     border-bottom-left-radius: 0;
   }
   .menu-item{
     display: block;
     width: 65%;
+    height: 100%;
   }
 }
 
