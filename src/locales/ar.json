@@ -1,5 +1,6 @@
 {
-  
+  "error_consumer_name_empty":"الرجاء إدخال الإسم",
+  "error_consumer_phone_empty":"رقم الهاتف ضروري لإكمال الطلب",
   "currency":"دينار جزائري",
   "orderNow":"أطلب الآن",
   "oneProd":"عبوة واحدة",

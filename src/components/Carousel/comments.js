@@ -1,10 +1,18 @@
 import defaultAvatar from "./avatars/avatar.jpg";
 import ava_01 from "./avatars/ava_01.jpg";
+import ava_02 from "./avatars/ava_02.jpg";
+import ava_03 from "./avatars/ava_03.jpg";
 import ava_04 from "./avatars/ava_04.jpg";
+import ava_05 from "./avatars/ava_05.jpg";
+import ava_06 from "./avatars/ava_06.jpg";
+import ava_07 from "./avatars/ava_07.jpg";
 import ava_08 from "./avatars/ava_08.jpg";
+import ava_09 from "./avatars/ava_09.jpg";
+import ava_10 from "./avatars/ava_10.jpg";
+import ava_11 from "./avatars/ava_11.jpg";
 
 const comments = [
-  [
+  [ 
     {
       profileName: "Médina Abdellaoui",
       profilePic: ava_04,
@@ -27,7 +35,7 @@ const comments = [
     },
     {
       profileName: "Fatine Alioua",
-      profilePic: defaultAvatar,
+      profilePic: ava_05,
       comText: "Merci j'ai reçu ma commande dans une semaine",
       comTime: "une heure."
     }
@@ -41,7 +49,7 @@ const comments = [
     },
     {
       profileName: "Lyn da",
-      profilePic: defaultAvatar,
+      profilePic: ava_02,
       comText: "Merci beaucoups !",
       comTime: "3 heures."
     }
@@ -49,13 +57,13 @@ const comments = [
   [
     {
       profileName: "Amina Louibi",
-      profilePic: defaultAvatar,
+      profilePic: ava_03,
       comText: "اشتريته وأنا في بلجيكا! :))",
       comTime: "2 heures."
     },
     {
       profileName: "لويزة",
-      profilePic: defaultAvatar,
+      profilePic: ava_06,
       comText: "الطلب وصل بعد أسبوع واحد، مكنتش قادرة نتبع وزني لأني كنت مشغولة جدا، روحت اليوم وزنت نفسي واكتشفت أني خسرت 2 كغ",
       comTime: "1 heure."
     }
@@ -69,7 +77,7 @@ const comments = [
     },
     {
       profileName: "دليلة مالي",
-      profilePic: defaultAvatar,
+      profilePic: ava_07,
       comText: "جرب القهوة الخضراء مع شريحة من الليمون. طعم لذيذ جدًا. )).",
       comTime: "6 heures"
     }
@@ -77,13 +85,13 @@ const comments = [
   [
     {
       profileName: "Kamelia Khaled",
-      profilePic: defaultAvatar,
+      profilePic: ava_09,
       comText: "استخدم المنتج وسعيدة جدًا معه. أبلغت جميع أصدقائي عنه واشتروه وسعداء جدًا بيه. أوصي الكل بشرائه.",
       comTime: "Hier."
     },
     {
       profileName: "نصيرة زيتوني",
-      profilePic: defaultAvatar,
+      profilePic: ava_10,
       comText: "هذا وين استلمت العبوة وبدأت العلاج اليوم. أتمنى يجيب نتائج حلوة معايا أنا تاني.",
       comTime: "Deux jours."
     }
@@ -98,7 +106,7 @@ const comments = [
     },
     {
       profileName: "Ahlam Benali",
-      profilePic: defaultAvatar,
+      profilePic: ava_11,
       comText: "Moi je l'admire bien !",
       comTime: "Une heure."
     }

@@ -9,6 +9,7 @@ const Input = ({
   init,
   ...rest
 }) => {
+  console.log(error);
   const err = error ? " error-style" : "";
   return (
     <div>
@@ -23,6 +24,7 @@ const Input = ({
           onChange={handlechange} 
           defaultValue={init}
         />
+        {error && <p className="input-error-text">{error}</p>}
       </div>
     </div>
   );

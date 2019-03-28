@@ -18,13 +18,38 @@ const Order = () => {
     quantity: 1,
     CostumerWilaya: 1
   });
+  let [errors, setErrors] = useState({
+    costumerName: "",
+    costumerPhone: ""
+  });
+  let [selectedWilaya, setSelectedWilaya] = useState(wilayaOptions[0]);
+  
   const [locale] = useContext(LocaleContext);
   let [selectedProduct,changeSelectedProduct] = useContext(ProductContext);
 
-  let [selectedWilaya, setSelectedWilaya] = useState(wilayaOptions[0]);
-
-  function submit(e) {
+  function validateForms(e){
     e.preventDefault();
+    
+    let valide = fields.costumerPhone && 
+                fields.costumerPhone;
+    
+    if( valide){
+      submit();
+    } else{
+
+      let new_errors = {...errors};
+      if(!fields.costumerName){
+        new_errors.costumerName = locale.error_consumer_name_empty;
+      }
+      if(!fields.costumerPhone){
+        new_errors.costumerPhone = locale.error_consumer_phone_empty;
+      }
+      setErrors(new_errors) ;
+    }
+  }
+
+  function submit() {
+  
     var formData = new FormData();
     let now = new Date();
     Object.keys(fields).forEach(fieldName => {
@@ -68,16 +93,16 @@ const Order = () => {
   }
 
   function handleChange(event) {
-    let new_fields = fields,
-      //errors = this.state.errors,
-      fieldName = event.target.name,
-      //format as first letter upper case
-      fieldValue = event.target.value;
+    let new_fields = {...fields},
+        save_errors = {...errors},
+        fieldName = event.target.name,
+        fieldValue = event.target.value;
+
     new_fields[fieldName] = fieldValue;
 
-    // if(errors[fieldName]){
-    //     delete errors[fieldName];
-    // }
+    if(save_errors[fieldName]){
+        delete save_errors[fieldName];
+    }
     // switch (fieldName){
     //     case "firstName":
     //         if(fieldValue.length!==0 && fieldValue.length<5) {
@@ -92,6 +117,7 @@ const Order = () => {
     //     default:
     //     break;
     // }
+    setErrors(save_errors);
     setFields(new_fields);
   }
 
@@ -110,7 +136,8 @@ const Order = () => {
   let shownPic;
   let productsClass;
   if(!selectedProduct)
-    changeSelectedProduct( productOptions[3] );
+    selectedProduct = productOptions[0];
+
   switch(selectedProduct.value){
     case 1:
       price = 3990;
@@ -134,9 +161,9 @@ const Order = () => {
     break;
     default:
   }
-  
+
   return (
-    <form id="order" className="order" onSubmit={submit} name="orderx">
+    <form id="order" className="order" onSubmit={validateForms} name="orderx">
       <div className="order-left">
         <div className={productsClass}>
           <img src={shownPic} alt="" />
@@ -172,12 +199,14 @@ const Order = () => {
           name="costumerName"
           handlechange={handleChange}
           placeholder={locale.name}
+          error = {errors.costumerName}
           type="text"
         />
         <Input
           name="costumerPhone"
           handlechange={handleChange}
           placeholder={locale.phoneNumber}
+          error = {errors.costumerPhone}
           type="text"
         />
         <button className="order-button-form"> {locale.orderNow} </button>
