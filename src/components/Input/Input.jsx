@@ -1,6 +1,7 @@
 import React from "react";
 import "./Input.css";
 const Input = ({
+  value,
   name,
   type,
   placeholder,
@@ -9,7 +10,6 @@ const Input = ({
   init,
   ...rest
 }) => {
-  console.log(error);
   const err = error ? " error-style" : "";
   return (
     <div>
@@ -18,6 +18,7 @@ const Input = ({
         <input
           {...rest}
           className={"perso-input-text" + err}
+          value = {value}
           name={name}
           type={type}
           placeholder={placeholder}

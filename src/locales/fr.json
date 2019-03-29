@@ -2,6 +2,7 @@
   
   "error_consumer_name_empty":"Vous devez entrer votre nom s'il vous plait",
   "error_consumer_phone_empty":"Votre numéro de téléphone est nécessaire pour la commande",
+  "error_consumer_phone_invalide":"Veuillez entrer un numéro valide s'il vous plait",
   "currency":"Dinar Algérien",
   "orderNow":"Commander",
   "oneProd":"1 paquet",

@@ -5,8 +5,12 @@ export default function CustomSelect( props  ) {
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
-      color: state.isSelected ? "#281d14" : "#ffffff"
-    })
+      color: state.isSelected ? "#281d14" : "#ffffff",
+    }),
+    singleValue: (provided, state) => {
+      const padding="10px 0"
+      return { ...provided,padding};
+    }
   };
 
   return (

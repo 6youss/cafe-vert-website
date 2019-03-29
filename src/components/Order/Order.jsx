@@ -30,22 +30,23 @@ const Order = () => {
   function validateForms(e){
     e.preventDefault();
     
-    let valide = fields.costumerPhone && 
-                fields.costumerPhone;
-    
-    if( valide){
-      submit();
-    } else{
+    let valide = true;
+    let new_errors = {...errors};
 
-      let new_errors = {...errors};
-      if(!fields.costumerName){
-        new_errors.costumerName = locale.error_consumer_name_empty;
-      }
-      if(!fields.costumerPhone){
-        new_errors.costumerPhone = locale.error_consumer_phone_empty;
-      }
-      setErrors(new_errors) ;
+    if(!fields.costumerName){
+      valide = false;
+      new_errors.costumerName = locale.error_consumer_name_empty;
     }
+    if(! (/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s/0-9]*$/.test(fields.costumerPhone))){
+      valide = false;
+      new_errors.costumerPhone = locale.error_consumer_phone_invalide;
+    }
+    if(!fields.costumerPhone){
+      valide = false;
+      new_errors.costumerPhone = locale.error_consumer_phone_empty;
+    }
+    
+    if(valide) submit(); else setErrors(new_errors);
   }
 
   function submit() {
@@ -104,14 +105,10 @@ const Order = () => {
         delete save_errors[fieldName];
     }
     // switch (fieldName){
-    //     case "firstName":
-    //         if(fieldValue.length!==0 && fieldValue.length<5) {
-    //             errors[fieldName]="First name must be longer then 5 letters"
-    //         }
-    //     break;
-    //     case "lastName":
-    //         if(fieldValue.length!==0 && fieldValue.length<5) {
-    //             errors[fieldName]="Last name must be longer then 5 letters"
+    //     case "costumerPhone":
+    //         if(  ) {
+    //           console.log("not a number !");
+    //           return;
     //         }
     //     break;
     //     default:
@@ -205,6 +202,7 @@ const Order = () => {
         <Input
           name="costumerPhone"
           handlechange={handleChange}
+          value = {fields.costumerPhone}
           placeholder={locale.phoneNumber}
           error = {errors.costumerPhone}
           type="text"

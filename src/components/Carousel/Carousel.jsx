@@ -20,8 +20,8 @@ const Carousel = () => {
   return (
     <div className="mCarousel-bg" name="comments">
       <Slider {...settings}>
-        {slidesData.map(comments => (
-          <Slide comments={comments} />
+        {slidesData.map( (comments , i) => (
+          <Slide key={i} comments={comments} />
         ))}
       </Slider>
     </div>
@@ -36,8 +36,8 @@ function Slide({ comments }) {
       <div className="mCarousel-item">
         <img className="mCarousel-item-phone" src={iPhonePic} alt="phone" />
         <div className="mCarousel-item-coms">
-          {comments.map(comment => (
-            <Comment {...comment} />
+          {comments.map( (comment,i) => (
+            <Comment key={i} {...comment} />
           ))}
         </div>
       </div>
