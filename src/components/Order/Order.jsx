@@ -65,7 +65,7 @@ const Order = () => {
       onOpen: () => {
         Swal.showLoading();
 
-        return fetch(`http://localhost:80/greenTea/routes/php/sendOrders.php`, {
+        return fetch(`http://localhost/s@|U<GcU27/routes/php/sendOrders.php`, {
           method: "POST",
           body: formData
         })
