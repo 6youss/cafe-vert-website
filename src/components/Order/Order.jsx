@@ -1,5 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./Order.css";
+import CountDown from "../CountDown/CountDown";
+
 import threeProdPic from "../Section1/images/prod_three.png";
 import oneProdPic from "../Section3/images/prod.png";
 
@@ -58,14 +60,14 @@ const Order = () => {
     });
     formData.append("quantity", selectedProduct.value);
     formData.append("orderDate", now.toISOString().split("T")[0]);
-    formData.append("costumerWilaya", selectedWilaya.value);
+    formData.append("CostumerWilaya", selectedWilaya.value);
     
     Swal.fire({
       confirmButtonColor: "#89b92f",
       onOpen: () => {
         Swal.showLoading();
 
-        return fetch(`http://localhost/s@|U<GcU27/routes/php/sendOrders.php`, {
+        return fetch(`https://www.dz-cafevert.com/AdminS1f/routes/php/sendOrders.php`, {
           method: "POST",
           body: formData
         })
@@ -77,8 +79,7 @@ const Order = () => {
             Swal.hideLoading();
             Swal.update({
               type: "success",
-              text:
-                "Merci pour la commande, nous allons vous appeler sur le numéro entré"
+              text: locale.success_order_message
             });
 
             return response.json();
@@ -209,6 +210,7 @@ const Order = () => {
         />
         <button className="order-button-form"> {locale.orderNow} </button>
       </div>
+      <CountDown/>
     </form>
   );
 };

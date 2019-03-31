@@ -2,7 +2,7 @@ import React, { useState, lazy, Suspense } from "react";
 import "./App.css";
 
 import Header from "./components/Header/Header";
-//import Section1 from "./components/Section1/Section1";
+
 import Section2 from "./components/Section2/Section2";
 import Section3 from "./components/Section3/Section3";
 import Section4 from "./components/Section4/Section4";
@@ -13,8 +13,8 @@ import Order from "./components/Order/Order";
 import Carousel from "./components/Carousel/Carousel";
 import { LocaleContext } from "./LocaleContext";
 import { locales } from "./LocaleContext";
-
 const Section1 = lazy(() => import("./components/Section1/Section1"));
+
 
 const productOptions = [
   { label: "", value: 1 },
@@ -51,7 +51,7 @@ function App() {
     <LocaleContext.Provider value={[locale,changeLanguage]}>
     <ProductContext.Provider value={[selectedProduct,changeSelectedProduct]}>
       <Suspense fallback={<Loading />}>
-        <Header />
+        <Header/>
         <Section1 />
         <Section2 />
         <Section3 />

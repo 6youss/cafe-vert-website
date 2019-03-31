@@ -1,0 +1,15 @@
+.countdown-container{
+  flex-basis: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 5%
+}
+
+.plaque{
+  padding: 20px 10px;
+  margin: 0 10px;
+  font-size: 2em;
+  background: #6ac619;
+}

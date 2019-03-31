@@ -1,4 +1,5 @@
 {
+  "success_order_message":"شكرا على الطلب ، سوف نتصل بك على الرقم الذي تم إدخاله",
   "error_consumer_name_empty":"الرجاء إدخال الإسم",
   "error_consumer_phone_empty":"رقم الهاتف ضروري لإكمال الطلب",
   "error_consumer_phone_invalide":"يرجى إدخال رقم هاتف صحيح",
