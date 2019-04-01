@@ -1,4 +1,5 @@
 .countdown-container{
+  position: relative;
   flex-basis: 100%;
   flex-grow: 1;
   display: flex;
@@ -7,25 +8,78 @@
   padding: 30px 5%;
 }
 .card-container{
-  perspective: 100px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  perspective: 150px;
   perspective-origin: center;
+  font-size: 2.3em;
 }
-.plaque{
-  padding: 20px 10px;
-  margin: 0 10px;
-  font-size: 2em;
+
+
+.upper-part, .bottom-part{
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.upper-part{
+  background: #76e614;
+  border-bottom: solid 1px #a2f559;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  align-items: flex-end;
+}
+.bottom-part{
   background: #6ac619;
+  border-bottom: solid 1px #2e570b;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  align-items: flex-start;
 }
+.absolute-positioned{
+  position: absolute;
+}
+.upper-part>span{
+  padding: 0px 20px;
+  transform: translateY(50%);
+}
+.bottom-part>span{
+  padding: 0px 20px;
+  transform: translateY(-50%);
+}
+
 .unfold{
-  animation: example 1s infinite;
+  animation: unfold-keys 1s infinite;
 }
-@keyframes example {
-  from {
-    transform: rotateX(0deg);
-    transform-origin: 0% 50%;
-  }
-  to {
+@keyframes unfold-keys {
+  0% {
     transform: rotateX(90deg);
-    transform-origin: 0% 50%;
+    transform-origin: 50% 0%;
+  }
+  50% {
+    transform: rotateX(90deg);
+    transform-origin: 50% 0%;
+  }
+  100% {
+    transform: rotateX(0deg);
+    transform-origin: 50% 0%;
+  }
+}
+.fold{
+  animation: fold-keys 1s infinite;
+}
+@keyframes fold-keys {
+  0% {
+    transform: rotateX(0deg);
+    transform-origin: 50% 100%;
+  }
+  50% {
+    transform: rotateX(-90deg);
+    transform-origin: 50% 100%;
+  }
+  100% {
+    transform: rotateX(-90deg);
+    transform-origin: 50% 100%;
   }
 }

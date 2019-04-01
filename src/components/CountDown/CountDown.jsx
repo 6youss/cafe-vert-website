@@ -1,51 +1,63 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./CountDown.css";
 
-
-let prev_readable = {};
-
 function CountDown() {
   const [time, setTime] = useState(getRndInteger(1 * 60 * 60, 3 * 60 * 60));
-  
+  const prev_readable = useRef(getReadableSeconds(time));
   useInterval(() => {
-    prev_readable = { ...readable };
-    setTime(time-1);
+    prev_readable.current = getReadableSeconds(time);
+    setTime(time - 1);
   }, 1000);
-  
-  let readable = getReadableSeconds(time);
 
-  console.log(prev_readable,readable);
-  const { seconds, minutes, hours } = readable;
+  const { seconds, minutes, hours } = getReadableSeconds(time);
+  const { seconds: prevSeconds,minutes: prevMinutes, hours: prevHours } = prev_readable.current;
 
   return (
     <div className="countdown-container">
-      <div className="card-container">
-        <p
-          className={
-            "plaque" + (hours!==prev_readable.hours?" unfold":"")
-          }
-        >
-          {hours <= 9 ? "0" + hours : hours}
-        </p>
+      <Card prevTime = {prevHours} time = {hours} animate={hours !== prevHours} />
+      <Card prevTime = {prevMinutes} time = {minutes} animate={minutes !== prevMinutes} />
+      <Card prevTime = {prevSeconds} time={seconds} animate={true} />
+    </div>
+  );
+}
+
+function Card({prevTime, time, animate }) {
+  
+  const [showprev,setShowPrev]=useState(false);
+  
+  useEffect(()=>{
+    setTimeout(handlePrev,500);
+    return ()=>clearTimeout(handlePrev);
+  },[showprev]);
+
+  function handlePrev(){
+    setShowPrev(true);
+  }
+  time = time <= 9 ? "0" + time : time;
+  prevTime = prevTime <= 9 ? "0" + prevTime : prevTime;
+  
+  return (
+    <div className="card-container">
+      <div className="upper-part">
+        <span>{time}</span>
       </div>
-      <div className="card-container">
-        <p
-          className={
-            "plaque" + (minutes!==prev_readable.minutes?" unfold":"")
-          }
-        >
-          {minutes <= 9 ? "0" + minutes : minutes}
-        </p>
+      <div className="bottom-part">
+        <span>{time}</span>
       </div>
-      <div className="card-container">
-        <p
-          className={
-            "plaque"
-          }
-        >
-          {seconds <= 9 ? "0" + seconds : seconds}
-        </p>
-      </div>
+      {animate && (
+        <>
+          <div className="upper-part absolute-positioned fold">
+            <span>{time}</span>
+          </div>
+
+          <div
+            className="bottom-part absolute-positioned unfold"
+            style={{ top: "50%" }}
+          >
+            <span>{time}</span>
+          </div>
+        </>
+      )}
     </div>
   );
 }
