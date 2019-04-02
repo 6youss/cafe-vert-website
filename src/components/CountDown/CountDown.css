@@ -1,14 +1,23 @@
-.countdown-container{
-  position: relative;
+.countdown-section {
   flex-basis: 100%;
+}
+.countdown-title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1em;
+  color: #4db20c;
+  font-style: italic;
+}
+
+.countdown-container {
+  position: relative;
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px 5%;
 }
-.card-container{
-  padding: 0 20px;
+.card-container {
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   perspective: 150px;
@@ -16,40 +25,40 @@
   font-size: 2.3em;
 }
 
-
-.upper-part, .bottom-part{
+.upper-part,
+.bottom-part {
   flex-basis: 50%;
   display: flex;
   justify-content: center;
   overflow: hidden;
 }
-.upper-part{
+.upper-part {
   background: #76e614;
   border-bottom: solid 1px #a2f559;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   align-items: flex-end;
 }
-.bottom-part{
+.bottom-part {
   background: #6ac619;
   border-bottom: solid 1px #2e570b;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   align-items: flex-start;
 }
-.absolute-positioned{
+.absolute-positioned {
   position: absolute;
 }
-.upper-part>span{
+.upper-part > span {
   padding: 0px 20px;
   transform: translateY(50%);
 }
-.bottom-part>span{
+.bottom-part > span {
   padding: 0px 20px;
   transform: translateY(-50%);
 }
 
-.unfold{
+.unfold {
   animation: unfold-keys 1s infinite;
 }
 @keyframes unfold-keys {
@@ -57,7 +66,7 @@
     transform: rotateX(90deg);
     transform-origin: 50% 0%;
   }
-  50% {
+  20% {
     transform: rotateX(90deg);
     transform-origin: 50% 0%;
   }
@@ -66,7 +75,7 @@
     transform-origin: 50% 0%;
   }
 }
-.fold{
+.fold {
   animation: fold-keys 1s infinite;
 }
 @keyframes fold-keys {
@@ -74,7 +83,7 @@
     transform: rotateX(0deg);
     transform-origin: 50% 100%;
   }
-  50% {
+  20% {
     transform: rotateX(-90deg);
     transform-origin: 50% 100%;
   }

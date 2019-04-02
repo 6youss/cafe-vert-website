@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./CountDown.css";
 
-function CountDown() {
+function CountDown({title}) {
   const [time, setTime] = useState(getRndInteger(1 * 60 * 60, 3 * 60 * 60));
   const prev_readable = useRef(getReadableSeconds(time));
   useInterval(() => {
@@ -10,51 +10,46 @@ function CountDown() {
   }, 1000);
 
   const { seconds, minutes, hours } = getReadableSeconds(time);
-  const { seconds: prevSeconds,minutes: prevMinutes, hours: prevHours } = prev_readable.current;
+  const { minutes: prevMinutes, hours: prevHours } = prev_readable.current;
 
   return (
-    <div className="countdown-container">
-      <Card prevTime = {prevHours} time = {hours} animate={hours !== prevHours} />
-      <Card prevTime = {prevMinutes} time = {minutes} animate={minutes !== prevMinutes} />
-      <Card prevTime = {prevSeconds} time={seconds} animate={true} />
+    <div className="countdown-section">
+      <div className="countdown-title">{title}</div>
+      <div className="countdown-container">
+        <Card time = {hours} animate={hours !== prevHours} />
+        <Card time = {minutes} animate={minutes !== prevMinutes} />
+        <Card time={seconds} animate={true} />
+      </div>
     </div>
   );
 }
 
-function Card({prevTime, time, animate }) {
+function Card({time, animate }) {
   
-  const [showprev,setShowPrev]=useState(false);
-  
-  useEffect(()=>{
-    setTimeout(handlePrev,500);
-    return ()=>clearTimeout(handlePrev);
-  },[showprev]);
-
-  function handlePrev(){
-    setShowPrev(true);
-  }
-  time = time <= 9 ? "0" + time : time;
-  prevTime = prevTime <= 9 ? "0" + prevTime : prevTime;
+  let render_time = time <= 9 ? "0" + time : time;
   
   return (
     <div className="card-container">
-      <div className="upper-part">
-        <span>{time}</span>
-      </div>
-      <div className="bottom-part">
-        <span>{time}</span>
-      </div>
+      <>
+        <div className={"upper-part"} >
+          <span>{render_time}</span>
+        </div>
+        <div className={"bottom-part"} >
+          <span>{render_time}</span>
+        </div>
+      </>
+
       {animate && (
         <>
           <div className="upper-part absolute-positioned fold">
-            <span>{time}</span>
+            <span>{render_time}</span>
           </div>
 
           <div
             className="bottom-part absolute-positioned unfold"
-            style={{ top: "50%" }}
+            style={{ top: "50%"}}
           >
-            <span>{time}</span>
+            <span>{render_time}</span>
           </div>
         </>
       )}

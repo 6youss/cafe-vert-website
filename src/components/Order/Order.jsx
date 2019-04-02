@@ -210,7 +210,7 @@ const Order = () => {
         />
         <button className="order-button-form"> {locale.orderNow} </button>
       </div>
-      <CountDown/>
+      <CountDown title={locale.countdown_title} />
     </form>
   );
 };
