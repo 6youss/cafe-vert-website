@@ -17,10 +17,6 @@ const Section2 = () => {
         <p>{locale.s2List2d}</p>
       </div>
       <div>
-        <h3>{locale.s2List3}</h3>
-        <p>{locale.s2List3d}</p>
-      </div>
-      <div>
         <h3>{locale.s2List4}</h3>
         <p>{locale.s2List4d}</p>
       </div>
