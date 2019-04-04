@@ -37,9 +37,6 @@
   border-bottom-right-radius: 5px;
   align-items: flex-start;
 }
-.absolute-positioned{
-  position: absolute;
-}
 .upper-part>span{
   padding: 0px 20px;
   transform: translateY(50%);
@@ -49,37 +46,37 @@
   transform: translateY(-50%);
 }
 
-.unfold{
-  animation: unfold-keys 1s infinite;
+
+.absolute-positioned{
+  position: absolute;
+  background: #a919c6;
 }
-@keyframes unfold-keys {
+.upper-animation{
+  animation: upper-animation-keys 5000ms;
+  animation-timing-function: linear;
+}
+.bottom-animation{
+  animation: bottom-animation-keys 5000ms;
+  animation-timing-function: linear;
+}
+@keyframes upper-animation-keys {
   0% {
-    transform: rotateX(90deg);
-    transform-origin: 50% 0%;
+    transform: rotateX(0deg);
+    transform-origin: 50% 100%;
   }
-  50% {
+
+  100% {
+    transform: rotateX(-90deg);
+    transform-origin: 50% 100%;
+  }
+}
+@keyframes bottom-animation-keys {
+  0% {
     transform: rotateX(90deg);
     transform-origin: 50% 0%;
   }
   100% {
     transform: rotateX(0deg);
     transform-origin: 50% 0%;
-  }
-}
-.fold{
-  animation: fold-keys 1s infinite;
-}
-@keyframes fold-keys {
-  0% {
-    transform: rotateX(0deg);
-    transform-origin: 50% 100%;
-  }
-  50% {
-    transform: rotateX(-90deg);
-    transform-origin: 50% 100%;
-  }
-  100% {
-    transform: rotateX(-90deg);
-    transform-origin: 50% 100%;
   }
 }

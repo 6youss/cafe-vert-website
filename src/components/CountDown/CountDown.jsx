@@ -1,63 +1,74 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./CountDown.css";
 
-function CountDown() {
-  const [time, setTime] = useState(getRndInteger(1 * 60 * 60, 3 * 60 * 60));
-  const prev_readable = useRef(getReadableSeconds(time));
-  useInterval(() => {
-    prev_readable.current = getReadableSeconds(time);
-    setTime(time - 1);
-  }, 1000);
+const FLIP_DURATION = 10000;
 
-  const { seconds, minutes, hours } = getReadableSeconds(time);
-  const { seconds: prevSeconds,minutes: prevMinutes, hours: prevHours } = prev_readable.current;
+function CountDown() {
+  const [time, setTime] = useState({value:getRndInteger(1 * 60 * 60, 3 * 60 * 60),swich:true});
+  
+  const prev_readable = useRef(getReadableSeconds(time.value));
+
+  useInterval(() => {
+    prev_readable.current = getReadableSeconds(time.value);
+    
+    setTime({
+      value: time.swich? (time.value - 1) : time.value, 
+      swich: !time.swich
+    });
+
+  }, FLIP_DURATION/2 );
+  
+
+
+  const { seconds, minutes, hours } = getReadableSeconds(time.value);
+  const {
+    seconds: prevSeconds,
+    minutes: prevMinutes,
+    hours: prevHours
+  } = prev_readable.current;
+
 
   return (
     <div className="countdown-container">
-      <Card prevTime = {prevHours} time = {hours} animate={hours !== prevHours} />
-      <Card prevTime = {prevMinutes} time = {minutes} animate={minutes !== prevMinutes} />
-      <Card prevTime = {prevSeconds} time={seconds} animate={true} />
+      {/* <Card prevTime = {prevHours} time = {hours} animate={hours !== prevHours} />
+      <Card prevTime = {prevMinutes} time = {minutes} animate={minutes !== prevMinutes} /> */}
+      <Card
+        prevTime={prevSeconds}
+        time={seconds}
+        animate={time.swich}
+      />
     </div>
   );
 }
 
-function Card({prevTime, time, animate }) {
+function Card({ prevTime, time, animate }) {
   
-  const [showprev,setShowPrev]=useState(false);
+  let render_time = time <= 9 ? "0" + time : time;
+  let render_prevTime = prevTime <= 9 ? "0" + prevTime : prevTime;
   
-  useEffect(()=>{
-    setTimeout(handlePrev,500);
-    return ()=>clearTimeout(handlePrev);
-  },[showprev]);
-
-  function handlePrev(){
-    setShowPrev(true);
-  }
-  time = time <= 9 ? "0" + time : time;
-  prevTime = prevTime <= 9 ? "0" + prevTime : prevTime;
-  
+  console.log(render_time , render_prevTime , animate);
   return (
     <div className="card-container">
       <div className="upper-part">
-        <span>{time}</span>
+        <span>{render_time}</span>
       </div>
       <div className="bottom-part">
-        <span>{time}</span>
+        <span>{render_prevTime}</span>
       </div>
-      {animate && (
-        <>
-          <div className="upper-part absolute-positioned fold">
-            <span>{time}</span>
-          </div>
-
-          <div
-            className="bottom-part absolute-positioned unfold"
-            style={{ top: "50%" }}
-          >
-            <span>{time}</span>
-          </div>
-        </>
-      )}
+      
+          {animate && (
+            <div className="upper-part absolute-positioned upper-animation">
+              <span>{render_prevTime}</span>
+            </div>
+          )}
+          {!animate && (
+            <div
+              className="bottom-part absolute-positioned bottom-animation"
+              style={{ top: "50%" }}
+            >
+              <span>{render_time}</span>
+            </div>
+          )}
     </div>
   );
 }
