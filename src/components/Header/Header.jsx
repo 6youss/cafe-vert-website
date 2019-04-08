@@ -105,7 +105,7 @@ function Header(props) {
   return (
     <header className="menu">
       {isMobileSize && (
-        <div className="nav-toggle" onClick={handleShowMenu}>
+        <div className={"nav-toggle"+ (showMenu?" brown-bg":"")} onClick={handleShowMenu}>
           <div>
             <i />
             <i />

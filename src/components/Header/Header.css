@@ -54,12 +54,13 @@
 }
 .logo-box b{
   display: inline-block;
+  position: relative;
 }
-.logo-box::before {
+.logo-box b::before {
   content: "";
   position: absolute;
-  left: 15px;
-  top: 25px;
+  left: -35px;
+  top: 0px;
   width: 23px;
   height: 33px;
   background: url("logo.png") no-repeat center;
@@ -92,7 +93,7 @@
 
 
 .nav-toggle{
-  width: 100%;
+  width: 65%;
   cursor: pointer;
   display: block;
   line-height: 50px;
@@ -102,6 +103,9 @@
   font-size: 16px;
   font-weight: 700;
   text-align: left;
+}
+.brown-bg{
+  background: linear-gradient(135deg, #342f2b 0%, #3d3832 100%);
 }
 .nav-toggle>div{
   display: inline-block;
