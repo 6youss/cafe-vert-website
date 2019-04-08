@@ -12,7 +12,9 @@ function Button({ className , productCount }) {
     { label: locale.fourProd, value: 4 }
   ];
   const [selectedProduct , setSelectedProduct] = useContext(ProductContext);
-
+  if(selectedProduct){
+    
+  }
   return (
     <button
       className={className}
