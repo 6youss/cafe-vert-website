@@ -162,7 +162,7 @@ const Order = () => {
 
   return (
     <form id="order" className="order" onSubmit={validateForms} name="orderx">
-      {/* <div className="order-left">
+      <div className="order-left">
         <div className={productsClass}>
           <img src={shownPic} alt="" />
         </div>
@@ -209,7 +209,7 @@ const Order = () => {
           type="text"
         />
         <button className="order-button-form"> {locale.orderNow} </button>
-      </div> */}
+      </div>
       <CountDown/>
     </form>
   );

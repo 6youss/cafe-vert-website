@@ -52,7 +52,7 @@ function App() {
     <ProductContext.Provider value={[selectedProduct,changeSelectedProduct]}>
       <Suspense fallback={<Loading />}>
         <Order />
-        {/* <Section1 />
+        <Section1 />
         <Section2 />
         <Section3 />
         <Section4 />
@@ -60,7 +60,7 @@ function App() {
         <Section6 />
         <Section7 />
         <Carousel />
-        <Section3 /> */}
+        <Section3 />
       </Suspense>
       </ProductContext.Provider>
     </LocaleContext.Provider>
