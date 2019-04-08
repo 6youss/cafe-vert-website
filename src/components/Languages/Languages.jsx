@@ -1,24 +1,26 @@
-import React, { useState } from "react";
+import React, { useContext,useState } from "react";
 import "./Languages.css";
 import algerie from "./algerie.png";
 import france from "./france.png";
-
-function Languages(props) {
+function Languages({changeLanguage,language}) {
 
   const [selectedLanguage, setSelectedLanguage] = useState(france);
   
   function handleClick(){
     if(selectedLanguage === france){
       setSelectedLanguage(algerie);
-      props.changeLanguage();
+      changeLanguage();
     }else{
       setSelectedLanguage(france);
-      props.changeLanguage();
+      changeLanguage();
     }
   }
 
   return (
-    <img className="select-lang" src={selectedLanguage} alt="select lang" onClick={handleClick}/>
+    <div className="select-lang" onClick={handleClick}>
+      <img className="select-lang-img" src={selectedLanguage} alt="language" />
+      <p>{language}</p>
+    </div>
   );
 }
 export default Languages;

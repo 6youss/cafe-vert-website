@@ -1,4 +1,5 @@
 {
+  "language_select":"Langue",
   "countdown_title":"Temps restant jusqu'à la fin de l'offre",
   "success_order_message":"Merci pour la commande, nous allons vous appeler sur le numéro entré",
   "error_consumer_name_empty":"Vous devez entrer votre nom s'il vous plait",
@@ -21,7 +22,7 @@
   "title":"Café Vert",
   
   "menuItem1":"Régime alimentaire",
-  "menuItem2":"Commentaires des clients",
+  "menuItem2":"Commentaires",
   "menuItem3":"Instructions",
   "menuItem4":"Ingrédients",
   "menuItem5":"Page principale",

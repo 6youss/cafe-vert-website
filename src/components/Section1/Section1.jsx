@@ -5,12 +5,13 @@ import Button from '../Button/Button'
 import girlsImg from "./images/girls.png";
 import prodBox from "./images/prod_three.png";
 import coffeBeans from "./images/coffe_beans1.png";
-
+import Languages from "../Languages/Languages";
 const Section1 = () => {
 
-  const [locale] = useContext(LocaleContext);
+  const [locale,changeLanguage] = useContext(LocaleContext);
   return (
     <section className="section1" name="principal_page">
+      <Languages language={locale.language_select} changeLanguage={changeLanguage} />
       <div className="body-container">  
         <div className="caffe-beans1">
           <img src={coffeBeans} alt="caffe beans" />

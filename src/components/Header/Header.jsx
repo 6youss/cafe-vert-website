@@ -2,14 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
 import "./Header.css";
 import { LocaleContext } from "../../LocaleContext";
-import Languages from "../Languages/Languages";
 import { Events, scroller } from "react-scroll";
 
 function Header(props) {
   
   const [isMobileSize, setIsMobileSize] = useState(false);
   const [showMenu, setShowMenu] = useState(true);
-  const [locale,changeLanguage] = useContext(LocaleContext);
+  const [locale] = useContext(LocaleContext);
   
   useEffect(()=>{
     Events.scrollEvent.register("begin");
@@ -105,7 +104,6 @@ function Header(props) {
 
   return (
     <header className="menu">
-      <Languages changeLanguage={changeLanguage} />
       {isMobileSize && (
         <div className="nav-toggle" onClick={handleShowMenu}>
           <div>

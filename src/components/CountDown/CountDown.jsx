@@ -46,7 +46,7 @@ function Card({ prevTime, time, swich }) {
   let render_prevTime = prevTime <= 9 ? "0" + prevTime : prevTime;
   const isNewValue = render_time !== render_prevTime;
   
-  console.log(render_time, render_prevTime, swich);
+  //console.log(render_time, render_prevTime, swich);
   
   return (
     <div className="card-container">
