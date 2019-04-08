@@ -49,14 +49,13 @@
 
 .absolute-positioned{
   position: absolute;
-  background: #a919c6;
 }
 .upper-animation{
-  animation: upper-animation-keys 5000ms;
+  animation: upper-animation-keys 500ms;
   animation-timing-function: linear;
 }
 .bottom-animation{
-  animation: bottom-animation-keys 5000ms;
+  animation: bottom-animation-keys 500ms;
   animation-timing-function: linear;
 }
 @keyframes upper-animation-keys {

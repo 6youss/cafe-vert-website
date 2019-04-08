@@ -1,24 +1,25 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./CountDown.css";
 
-const FLIP_DURATION = 10000;
+const FLIP_DURATION = 1000;
 
 function CountDown() {
-  const [time, setTime] = useState({value:getRndInteger(1 * 60 * 60, 3 * 60 * 60),swich:true});
-  
+
+  const [time, setTime] = useState({
+    value: getRndInteger(1 * 60 * 60, 3 * 60 * 60),
+    swich: false
+  });
+
   const prev_readable = useRef(getReadableSeconds(time.value));
 
   useInterval(() => {
-    prev_readable.current = getReadableSeconds(time.value);
-    
+    if(!time.swich)
+      prev_readable.current = getReadableSeconds(time.value);
     setTime({
-      value: time.swich? (time.value - 1) : time.value, 
+      value: time.swich ? time.value : time.value - 1,
       swich: !time.swich
     });
-
-  }, FLIP_DURATION/2 );
-  
-
+  }, FLIP_DURATION / 2);
 
   const { seconds, minutes, hours } = getReadableSeconds(time.value);
   const {
@@ -27,26 +28,22 @@ function CountDown() {
     hours: prevHours
   } = prev_readable.current;
 
-
   return (
     <div className="countdown-container">
-      {/* <Card prevTime = {prevHours} time = {hours} animate={hours !== prevHours} />
-      <Card prevTime = {prevMinutes} time = {minutes} animate={minutes !== prevMinutes} /> */}
-      <Card
-        prevTime={prevSeconds}
-        time={seconds}
-        animate={time.swich}
-      />
+      <Card prevTime = {prevHours} time = {hours} swich={time.swich} />
+      <Card prevTime = {prevMinutes} time = {minutes} swich={time.swich} />
+      <Card prevTime={prevSeconds} time={seconds} swich={time.swich} />
     </div>
   );
 }
 
-function Card({ prevTime, time, animate }) {
-  
+function Card({ prevTime, time, swich }) {
   let render_time = time <= 9 ? "0" + time : time;
   let render_prevTime = prevTime <= 9 ? "0" + prevTime : prevTime;
+  const isNewValue = render_time !== render_prevTime;
   
-  console.log(render_time , render_prevTime , animate);
+  console.log(render_time, render_prevTime, swich);
+  
   return (
     <div className="card-container">
       <div className="upper-part">
@@ -55,13 +52,15 @@ function Card({ prevTime, time, animate }) {
       <div className="bottom-part">
         <span>{render_prevTime}</span>
       </div>
-      
-          {animate && (
+      {
+        isNewValue &&
+        <>
+          {swich && (
             <div className="upper-part absolute-positioned upper-animation">
               <span>{render_prevTime}</span>
             </div>
           )}
-          {!animate && (
+          {!swich && (
             <div
               className="bottom-part absolute-positioned bottom-animation"
               style={{ top: "50%" }}
@@ -69,6 +68,8 @@ function Card({ prevTime, time, animate }) {
               <span>{render_time}</span>
             </div>
           )}
+        </>
+      }
     </div>
   );
 }
