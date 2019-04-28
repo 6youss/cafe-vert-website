@@ -3,6 +3,7 @@ import "./App.css";
 
 import Header from "./components/Header/Header";
 
+import Section1 from "./components/Section1/Section1";
 import Section2 from "./components/Section2/Section2";
 import Section3 from "./components/Section3/Section3";
 import Section4 from "./components/Section4/Section4";
@@ -13,7 +14,7 @@ import Order from "./components/Order/Order";
 import Carousel from "./components/Carousel/Carousel";
 import { LocaleContext } from "./LocaleContext";
 import { locales } from "./LocaleContext";
-const Section1 = lazy(() => import("./components/Section1/Section1"));
+// const Section1 = lazy(() => import("./components/Section1/Section1"));
 
 
 const productOptions = [
@@ -50,8 +51,9 @@ function App() {
   return (
     <LocaleContext.Provider value={[locale,changeLanguage]}>
     <ProductContext.Provider value={[selectedProduct,changeSelectedProduct]}>
-      <Suspense fallback={<Loading />}>
+      {/* <Suspense fallback={<Loading />}> */}
         <Header/>
+        <Order />
         <Section1 />
         <Section2 />
         <Section3 />
@@ -61,8 +63,7 @@ function App() {
         <Section7 />
         <Carousel />
         <Section3 />
-        <Order />
-      </Suspense>
+      {/* </Suspense> */}
       </ProductContext.Provider>
     </LocaleContext.Provider>
   );

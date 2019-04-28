@@ -1,7 +1,7 @@
 .order {
   display: flex;
   flex-wrap: wrap;
-  padding: 80px 5% 50px 5%;
+  padding: 120px 5% 50px 5%;
   box-shadow: inset 0px 0px 24px -5px rgba(0, 0, 0, 0.75);
   overflow: hidden;
 }
