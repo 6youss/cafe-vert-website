@@ -54,20 +54,19 @@ const Order = () => {
   function submit() {
   
     var formData = new FormData();
-    let now = new Date();
     Object.keys(fields).forEach(fieldName => {
       formData.append(fieldName, fields[fieldName]);
     });
     formData.append("quantity", selectedProduct.value);
-    formData.append("orderDate", now.toISOString().split("T")[0]);
+    let date = newDateTime(new Date());
+    formData.append("orderDate",  date );
     formData.append("CostumerWilaya", selectedWilaya.value);
-    
     Swal.fire({
       confirmButtonColor: "#89b92f",
       onOpen: () => {
         Swal.showLoading();
 
-        return fetch(`https://www.dz-cafevert.com/AdminS1f/routes/php/sendOrders.php`, {
+        return fetch(`https://dz-cafevert.site/S1fAdmin/routes/php/sendOrders.php`, {
           method: "POST",
           body: formData
         })
@@ -216,3 +215,33 @@ const Order = () => {
 };
 
 export default Order;
+
+
+function newDateTime(d) {
+  var DTformat = newDate(d) + " " + newTime(d);
+  return DTformat;
+}
+
+function newTime(d) {
+  var H = d.getHours(),
+    M = d.getMinutes();
+  if (H < 10) H = "0" + H;
+  if (M < 10) M = "0" + M;
+  var time = [H, M].join(":");
+  return time;
+}
+
+function newDate(today) {
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1; //January is 0!
+
+  var yyyy = today.getFullYear();
+  if (dd < 10) {
+    dd = "0" + dd;
+  }
+  if (mm < 10) {
+    mm = "0" + mm;
+  }
+  today = yyyy + "-" + mm + "-" + dd;
+  return today;
+}
