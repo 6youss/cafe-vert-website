@@ -3,11 +3,11 @@
   <head>
     <meta name="wot-verification" content="fcc33afa77215bc0fe6d" />
     <meta property="fb:app_id" content="2354858561232665" />
-    <meta property="og:url" content="https://www.dz-cafevert.com/" />
+    <meta property="og:url" content="https://dzcafevert.herokuapp.com/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Café Vert" />
     <meta property="og:description" content="Brûler les Graisses Boire du Café !" />
-    <meta property="og:image" content="https://www.dz-cafevert.com/cafe_vert.jpg" />
+    <meta property="og:image" content="https://dzcafevert.herokuapp.com/cafe_vert.jpg" />
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -28,34 +28,49 @@
     -->
     <title>Café Vert</title>
 
-    <!-- Facebook Pixel Code -->
+   <!-- Facebook Pixel Code -->
+
     <script>
-      !(function(f, b, e, v, n, t, s) {
+      !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
-        n = f.fbq = function() {
+        n = f.fbq = function () {
           n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
         };
+
         if (!f._fbq) f._fbq = n;
         n.push = n;
         n.loaded = !0;
-        n.version = "2.0";
+        n.version = '2.0';
+
         n.queue = [];
         t = b.createElement(e);
         t.async = !0;
+
         t.src = v;
         s = b.getElementsByTagName(e)[0];
+
         s.parentNode.insertBefore(t, s);
-      })(window, document, "script", "https://connect.facebook.net/en_US/fbevents.js");
-      fbq("init", "3062683230517450");
-      fbq("track", "PageView");
+      })(
+        window,
+        document,
+        'script',
+
+        'https://connect.facebook.net/en_US/fbevents.js'
+      );
+
+      fbq('init', '152949146722176');
+
+      fbq('track', 'PageView');
     </script>
+
     <noscript
       ><img
         height="1"
         width="1"
-        style="display:none"
-        src="https://www.facebook.com/tr?id=3062683230517450&ev=PageView&noscript=1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=152949146722176&ev=PageView&noscript=1"
     /></noscript>
+
     <!-- End Facebook Pixel Code -->
   </head>
   <body>
