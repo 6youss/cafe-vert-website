@@ -28,19 +28,19 @@
     -->
     <title>Café Vert</title>
 
-   <!-- Facebook Pixel Code -->
+    <!-- Facebook Pixel Code -->
 
     <script>
-      !(function (f, b, e, v, n, t, s) {
+      !(function(f, b, e, v, n, t, s) {
         if (f.fbq) return;
-        n = f.fbq = function () {
+        n = f.fbq = function() {
           n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
         };
 
         if (!f._fbq) f._fbq = n;
         n.push = n;
         n.loaded = !0;
-        n.version = '2.0';
+        n.version = "2.0";
 
         n.queue = [];
         t = b.createElement(e);
@@ -53,14 +53,14 @@
       })(
         window,
         document,
-        'script',
+        "script",
 
-        'https://connect.facebook.net/en_US/fbevents.js'
+        "https://connect.facebook.net/en_US/fbevents.js"
       );
 
-      fbq('init', '152949146722176');
+      fbq("init", "152949146722176");
 
-      fbq('track', 'PageView');
+      fbq("track", "PageView");
     </script>
 
     <noscript
@@ -72,6 +72,36 @@
     /></noscript>
 
     <!-- End Facebook Pixel Code -->
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+      (function(m, e, t, r, i, k, a) {
+        m[i] =
+          m[i] ||
+          function() {
+            (m[i].a = m[i].a || []).push(arguments);
+          };
+        m[i].l = 1 * new Date();
+        (k = e.createElement(t)),
+          (a = e.getElementsByTagName(t)[0]),
+          (k.async = 1),
+          (k.src = r),
+          a.parentNode.insertBefore(k, a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(74914306, "init", {
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true,
+        ecommerce: "dataLayer",
+      });
+    </script>
+    <noscript
+      ><div><img src="https://mc.yandex.ru/watch/74914306" style="position:absolute; left:-9999px;" alt="" /></div
+    ></noscript>
+    <!-- /Yandex.Metrika counter -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
